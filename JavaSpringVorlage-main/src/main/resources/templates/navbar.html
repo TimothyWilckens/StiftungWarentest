@@ -13,6 +13,13 @@
           <li th:unless="${activePage == 'home'}" class="nav-item">
               <a class="nav-link" th:href="@{/?activePage=home}">Home</a>
           </li>
+
+          <li th:if="${activePage == 'impressum'}" class="nav-item">
+            <a class="nav-link active" th:href="@{/?activePage=impressum}">Impressum</a>
+          </li>
+          <li th:unless="${activePage == 'impressum'}" class="nav-item">
+              <a class="nav-link" th:href="@{/?activePage=impressum}">Impressum</a>
+          </li>
           
         </ul>
       </div>
