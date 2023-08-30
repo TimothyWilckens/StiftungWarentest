@@ -1,27 +1,26 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark container">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">JS Vorlage</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          <li th:if="${activePage == 'home'}" class="nav-item">
-            <a class="nav-link active" th:href="@{/?activePage=home}">Home</a>
-          </li>
-          <li th:unless="${activePage == 'home'}" class="nav-item">
-              <a class="nav-link" th:href="@{/?activePage=home}">Home</a>
-          </li>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo left">
+      <i class="material-icons">format_list_bulleted</i>Kalender Projekt</a>
+    <ul class="right hide-on-med-and-down">
 
-          <li th:if="${activePage == 'impressum'}" class="nav-item">
-            <a class="nav-link active" th:href="@{/?activePage=impressum}">Impressum</a>
-          </li>
-          <li th:unless="${activePage == 'impressum'}" class="nav-item">
-              <a class="nav-link" th:href="@{/?activePage=impressum}">Impressum</a>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
+      <li class="active" th:if="${activePage == 'home'}">
+        <a th:href="@{/?activePage=home}">
+          <i class="material-icons left">apps</i>Home</a>
+      </li>
+      <li th:unless="${activePage == 'home'}">
+        <a th:href="@{/?activePage=home}">
+          <i class="material-icons left">apps</i>Home</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'impressum'}">
+        <a th:href="@{/?activePage=impressum}">
+          <i class="material-icons left">description</i>Impressum</a>
+      </li>
+      <li th:unless="${activePage == 'impressum'}">
+        <a th:href="@{/?activePage=impressum}">
+          <i class="material-icons left">description</i>Impressum</a>
+      </li>
+    </ul>
+  </div>
+</nav>
