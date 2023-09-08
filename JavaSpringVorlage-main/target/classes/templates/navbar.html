@@ -1,3 +1,7 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<!--Navbar-->
 <nav>
   <div class="nav-wrapper">
     <a href="/" class="brand-logo left">
@@ -13,13 +17,41 @@
           <i class="material-icons left">apps</i>Home</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'impressum'}">
-        <a th:href="@{/?activePage=impressum}">
-          <i class="material-icons left">description</i>Impressum</a>
+      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Technische Grundlagen</a>
       </li>
-      <li th:unless="${activePage == 'impressum'}">
-        <a th:href="@{/?activePage=impressum}">
-          <i class="material-icons left">description</i>Impressum</a>
+      <li th:unless="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Technische Grundlagen</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'sicherheit'}">
+        <a th:href="@{?activePage=sicherheit}">
+          <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
+      </li>
+      <li th:unless="${activePage == 'sicherheit'}">
+        <a th:href="@{?activePage=sicherheit}">
+          <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
+      </li>
+
+      
+      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Komplexe Verfahren</a>
+      </li>
+      <li th:unless="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Komplexe Verfahren</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Angriffe</a>
+      </li>
+      <li th:unless="${activePage == 'technischegrundlagen'}">
+        <a th:href="@{?activePage=technischegrundlagen}">
+          <i class="material-icons left">description</i>Angriffe</a>
       </li>
     </ul>
   </div>

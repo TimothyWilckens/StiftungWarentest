@@ -1,0 +1,18 @@
+<h1>Diffie-Hellman-Merkle Schlüsseltausch</h1>
+<hr>
+<form th:action="@{/diffiehellman_choose_p_and_g_submit}" class="col-4">
+    <div class="mb-3">
+        <label for="p" class="form-label">Wähle p (Primzahl)</label>
+        <input type="number" class="form-control" id="p" placeholder="Beispiel: 11" th:name="p">
+    </div>
+
+    <div class="mb-3">
+        <label for="g" class="form-label">Wähle g (Beliebige natürliche Zahl)</label>
+        <input type="number" class="form-control" id="g" placeholder="Beispiel: 7" th:name="g">
+    </div>
+    
+    <div class="col-auto">
+        <button type="submit" class="btn btn-success mb-3">Weiter</button>
+    </div>
+
+    <a class="btn btn-success mb-3" th:href="@{/?activePage=sicherheit}">Abbrechen</a>

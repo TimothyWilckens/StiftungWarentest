@@ -1,0 +1,27 @@
+<h1>Diffie-Hellman-Merkle Schlüsseltausch</h1>
+<hr>
+
+Gewählter Wert für p: <span th:text="${p}"></span>
+<h1></h1>
+Gewählter Wert für g: <span th:text="${g}"></span>
+<h1></h1>
+
+<form th:action="@{/diffiehellman_choose_a_and_b_submit}" class="col-4">
+    <div class="mb-3">
+        <label for="a" class="form-label">Person 1, wähle eine Zahl a, welche kleiner als <span th:text="${p}"></span></label> ist:
+        <input type="a" class="form-control" id="a" placeholder="a" th:name="a">
+    </div>
+
+    <div class="mb-3">
+        <label for="b" class="form-label">Person 2, wähle eine Zahl b, welche kleiner ist als <span th:text="${p}"></span>
+        </label>
+        <input type="b" class="form-control" id="b" placeholder="b" th:name="b">
+    </div>
+    
+    <div class="col-auto">
+        <button type="submit" class="btn btn-success mb-3">Schlüssel erstellen</button>
+    </div>
+
+    <a class="btn btn-success mb-3" th:href="@{/diffiehellman_choose_p_and_g}">Zurück</a>
+
+    <a class="btn btn-success mb-3" th:href="@{/?activePage=sicherheit}">Abbrechen</a>
