@@ -1,6 +1,3 @@
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
 <!--Navbar-->
 <nav>
   <div class="nav-wrapper">
@@ -36,21 +33,21 @@
       </li>
 
       
-      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li class="active" th:if="${activePage == 'komplexeverfahren'}">
+        <a th:href="@{?activePage=komplexeverfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
-      <li th:unless="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li th:unless="${activePage == 'komplexeverfahren'}">
+        <a th:href="@{?activePage=komplexeverfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li class="active" th:if="${activePage == 'angriff'}">
+        <a th:href="@{?activePage=angriff}">
           <i class="material-icons left">description</i>Angriffe</a>
       </li>
-      <li th:unless="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li th:unless="${activePage == 'angriff'}">
+        <a th:href="@{?activePage=angriff}">
           <i class="material-icons left">description</i>Angriffe</a>
       </li>
     </ul>
