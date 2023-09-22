@@ -1,6 +1,6 @@
 <!--Navbar-->
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper blue accent-2">
     <!--Id für Button zum jeweiligen Start der Seite-->
     <a href="/" id="pagetop" class="brand-logo left">
       <i class="material-icons">format_list_bulleted</i>Verteilte Systeme</a>
@@ -33,7 +33,6 @@
           <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
       </li>
 
-      
       <li class="active" th:if="${activePage == 'komplexeverfahren'}">
         <a th:href="@{?activePage=komplexeverfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
@@ -50,6 +49,15 @@
       <li th:unless="${activePage == 'angriff'}">
         <a th:href="@{?activePage=angriff}">
           <i class="material-icons left">description</i>Angriffe</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'interaktive_elemente'}">
+        <a th:href="@{?activePage=interaktive_elemente}">
+          <i class="material-icons left">description</i>Interaktive Elemente</a>
+      </li>
+      <li th:unless="${activePage == 'interaktive_elemente'}">
+        <a th:href="@{?activePage=interaktive_elemente}">
+          <i class="material-icons left">description</i>Interaktive Elemente</a>
       </li>
     </ul>
   </div>
