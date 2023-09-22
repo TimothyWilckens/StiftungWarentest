@@ -1,7 +1,8 @@
 <!--Navbar-->
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo left">
+    <!--Id für Button zum jeweiligen Start der Seite-->
+    <a href="/" id="pagetop" class="brand-logo left">
       <i class="material-icons">format_list_bulleted</i>Verteilte Systeme</a>
     <ul class="right hide-on-med-and-down">
 
@@ -53,3 +54,10 @@
     </ul>
   </div>
 </nav>
+
+<!--Button ist dynamisch auf allen Seiten und führt immer zum Start der Seite, muss also nicht einzeln eingebaut werden-->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red" href="#pagetop">
+      <i class="large material-icons">arrow_upward</i>
+  </a>
+</div>
