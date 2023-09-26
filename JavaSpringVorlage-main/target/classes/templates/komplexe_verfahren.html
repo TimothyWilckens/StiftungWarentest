@@ -28,7 +28,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -45,7 +45,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/Signaturen.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/Signaturen.jpg}" alt="Signaturen not found"/>
     </div>
 </div>
 
@@ -63,7 +63,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/Protokolle.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/Protokolle.jpg}" alt="Protokolle not found"/>
     </div>
 </div>
 
@@ -81,7 +81,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/Protokolle.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/Protokolle.jpg}" alt="Protokolle not found"/>
     </div>
 </div>
 
@@ -99,7 +99,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -117,7 +117,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/Ende-Zu-Ende.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/Ende-Zu-Ende.jpg}" alt="Ende-Zu-Ende not found"/>
     </div>
 </div>
 
@@ -135,18 +135,32 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/PGP.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/PGP.jpg}" alt="PGP not found"/>
     </div>
 </div>
 
 <hr></hr>
 
 <div class="row">
-    <div class="col s6">
-        <h4>Zum nächsten Inhalt:</h4>
+    <!--Grid-Zuweisungen (col) sind in diesem Bereich rein designorientiert-->
+    <div class="col s1">
+        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=sicherheit}">
+            <i class="material-icons">arrow_back</i>
+        </a>
     </div>
-    <div class="col s6 l2">
-        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=angriff}">
+    <div class="col s2">
+        <h5> Zurück zu Sicherheit</h5>
+    </div>
+
+    <div class="col s2">
+        
+    </div>
+    
+    <div class="col s3">
+        <h5>Weiter zu Angriffsarten:</h5>
+    </div>
+    <div class="col s4">
+        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=angriffsarten}">
             <i class="material-icons">arrow_forward</i>
         </a>
     </div>

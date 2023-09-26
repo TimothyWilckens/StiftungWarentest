@@ -15,12 +15,12 @@
           <i class="material-icons left">apps</i>Home</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li class="active" th:if="${activePage == 'technische_grundlagen'}">
+        <a th:href="@{?activePage=technische_grundlagen}">
           <i class="material-icons left">description</i>Technische Grundlagen</a>
       </li>
-      <li th:unless="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li th:unless="${activePage == 'technische_grundlagen'}">
+        <a th:href="@{?activePage=technische_grundlagen}">
           <i class="material-icons left">description</i>Technische Grundlagen</a>
       </li>
 
@@ -33,22 +33,31 @@
           <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'komplexeverfahren'}">
-        <a th:href="@{?activePage=komplexeverfahren}">
+      <li class="active" th:if="${activePage == 'komplexe_verfahren'}">
+        <a th:href="@{?activePage=komplexe_verfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
-      <li th:unless="${activePage == 'komplexeverfahren'}">
-        <a th:href="@{?activePage=komplexeverfahren}">
+      <li th:unless="${activePage == 'komplexe_verfahren'}">
+        <a th:href="@{?activePage=komplexe_verfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'angriff'}">
-        <a th:href="@{?activePage=angriff}">
-          <i class="material-icons left">description</i>Angriffe</a>
+      <li class="active" th:if="${activePage == 'angriffsarten'}">
+        <a th:href="@{?activePage=angriffsarten}">
+          <i class="material-icons left">description</i>Angriffsarten</a>
       </li>
-      <li th:unless="${activePage == 'angriff'}">
-        <a th:href="@{?activePage=angriff}">
-          <i class="material-icons left">description</i>Angriffe</a>
+      <li th:unless="${activePage == 'angriffsarten'}">
+        <a th:href="@{?activePage=angriffsarten}">
+          <i class="material-icons left">description</i>Angriffsarten</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'historische_angriffe'}">
+        <a th:href="@{?activePage=historische_angriffe}">
+          <i class="material-icons left">description</i>Historische Angriffe</a>
+      </li>
+      <li th:unless="${activePage == 'historische_angriffe'}">
+        <a th:href="@{?activePage=historische_angriffe}">
+          <i class="material-icons left">description</i>Historische Angriffe</a>
       </li>
 
       <li class="active" th:if="${activePage == 'interaktive_elemente'}">

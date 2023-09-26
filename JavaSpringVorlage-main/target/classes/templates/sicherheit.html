@@ -29,7 +29,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/clientserver.jpg?raw=true"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -46,7 +46,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="https://github.com/TimothyWilckens/StiftungWarentest/blob/main/JavaSpringVorlage-main/Images/clientserver.jpg?raw=true" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -63,7 +63,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -80,7 +80,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -97,7 +97,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -114,7 +114,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 
@@ -131,7 +131,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 <div class="row">
@@ -156,7 +156,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img src="@{classpath:static/clientserver.png}" alt="Not Found"><img/>
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
     </div>
 </div>
 <div class="row">
@@ -171,11 +171,25 @@
 <hr></hr>
 
 <div class="row">
-    <div class="col s6">
-        <h4>Zum nächsten Inhalt:</h4>
+    <!--Grid-Zuweisungen (col) sind in diesem Bereich rein designorientiert-->
+    <div class="col s1">
+        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=technische_grundlagen}">
+            <i class="material-icons">arrow_back</i>
+        </a>
     </div>
-    <div class="col s6 l2">
-        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=komplexeverfahren}">
+    <div class="col s2">
+        <h5> Zurück zu Technische Grundlagen</h5>
+    </div>
+
+    <div class="col s2">
+        
+    </div>
+    
+    <div class="col s3">
+        <h5>Weiter zu Komplexen Verfahren:</h5>
+    </div>
+    <div class="col s4">
+        <a class="btn-floating btn-large waves-effect" th:href="@{/?activePage=komplexe_verfahren}">
             <i class="material-icons">arrow_forward</i>
         </a>
     </div>
