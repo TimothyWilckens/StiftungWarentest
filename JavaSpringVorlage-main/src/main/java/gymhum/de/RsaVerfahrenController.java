@@ -17,6 +17,6 @@ public class RsaVerfahrenController {
     BigInteger m;
     BigInteger d;
     BigInteger e;
+    boolean keysequal;
 
-    
 }
