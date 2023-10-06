@@ -1,7 +1,8 @@
 <!--Navbar-->
 <nav>
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo left">
+  <div class="nav-wrapper blue accent-2">
+    <!--Id für Button zum jeweiligen Start der Seite-->
+    <a href="/" id="pagetop" class="brand-logo left">
       <i class="material-icons">format_list_bulleted</i>Verteilte Systeme</a>
     <ul class="right hide-on-med-and-down">
 
@@ -14,12 +15,12 @@
           <i class="material-icons left">apps</i>Home</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li class="active" th:if="${activePage == 'technische_grundlagen'}">
+        <a th:href="@{?activePage=technische_grundlagen}">
           <i class="material-icons left">description</i>Technische Grundlagen</a>
       </li>
-      <li th:unless="${activePage == 'technischegrundlagen'}">
-        <a th:href="@{?activePage=technischegrundlagen}">
+      <li th:unless="${activePage == 'technische_grundlagen'}">
+        <a th:href="@{?activePage=technische_grundlagen}">
           <i class="material-icons left">description</i>Technische Grundlagen</a>
       </li>
 
@@ -32,24 +33,48 @@
           <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
       </li>
 
-      
-      <li class="active" th:if="${activePage == 'komplexeverfahren'}">
-        <a th:href="@{?activePage=komplexeverfahren}">
+      <li class="active" th:if="${activePage == 'komplexe_verfahren'}">
+        <a th:href="@{?activePage=komplexe_verfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
-      <li th:unless="${activePage == 'komplexeverfahren'}">
-        <a th:href="@{?activePage=komplexeverfahren}">
+      <li th:unless="${activePage == 'komplexe_verfahren'}">
+        <a th:href="@{?activePage=komplexe_verfahren}">
           <i class="material-icons left">description</i>Komplexe Verfahren</a>
       </li>
 
-      <li class="active" th:if="${activePage == 'angriff'}">
-        <a th:href="@{?activePage=angriff}">
-          <i class="material-icons left">description</i>Angriffe</a>
+      <li class="active" th:if="${activePage == 'angriffsarten'}">
+        <a th:href="@{?activePage=angriffsarten}">
+          <i class="material-icons left">description</i>Angriffsarten</a>
       </li>
-      <li th:unless="${activePage == 'angriff'}">
-        <a th:href="@{?activePage=angriff}">
-          <i class="material-icons left">description</i>Angriffe</a>
+      <li th:unless="${activePage == 'angriffsarten'}">
+        <a th:href="@{?activePage=angriffsarten}">
+          <i class="material-icons left">description</i>Angriffsarten</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'historische_angriffe'}">
+        <a th:href="@{?activePage=historische_angriffe}">
+          <i class="material-icons left">description</i>Historische Angriffe</a>
+      </li>
+      <li th:unless="${activePage == 'historische_angriffe'}">
+        <a th:href="@{?activePage=historische_angriffe}">
+          <i class="material-icons left">description</i>Historische Angriffe</a>
+      </li>
+
+      <li class="active" th:if="${activePage == 'interaktive_elemente'}">
+        <a th:href="@{?activePage=interaktive_elemente}">
+          <i class="material-icons left">description</i>Interaktive Elemente</a>
+      </li>
+      <li th:unless="${activePage == 'interaktive_elemente'}">
+        <a th:href="@{?activePage=interaktive_elemente}">
+          <i class="material-icons left">description</i>Interaktive Elemente</a>
       </li>
     </ul>
   </div>
 </nav>
+
+<!--Button ist dynamisch auf allen Seiten und führt immer zum Start der Seite, muss also nicht einzeln eingebaut werden-->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red" href="#pagetop">
+      <i class="large material-icons">arrow_upward</i>
+  </a>
+</div>
