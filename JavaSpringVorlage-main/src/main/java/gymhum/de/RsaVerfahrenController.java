@@ -1,4 +1,4 @@
- package gymhum.de;
+package gymhum.de;
 
 import java.math.BigInteger;
 //test
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 public class RsaVerfahrenController {
-    BigInteger p;
+        BigInteger p;
     BigInteger q;
     BigInteger n;
     BigInteger m;
@@ -18,7 +18,7 @@ public class RsaVerfahrenController {
     BigInteger e;
     boolean keysequal;
 
-    public RsaVerfahrenController(){
+public RsaVerfahrenController(){
         setP(BigInteger.valueOf(13));
         setQ(BigInteger.valueOf(7));
         setE(BigInteger.valueOf(11));
