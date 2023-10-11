@@ -1,5 +1,4 @@
 package gymhum.de;
-//Test
 
 import java.math.BigInteger;
 
@@ -41,12 +40,23 @@ public class DiffieHellmanController {
         return "index.html";
     }
 
+    @GetMapping("/diffiehellman_choose_p_and_g_error")
+    public String diffiehellman_choose_p_and_g_error(@RequestParam(name="activePage", required = false, defaultValue = "diffiehellman") String activePage, Model model){
+        model.addAttribute("activePage", "diffiehellman_choose_p_and_g_error");
+        return "index.html";
+    }
+
     @GetMapping("/diffiehellman_choose_p_and_g_submit")
     public String diffiehellman_choose_p_and_g_submit(@RequestParam(name="activePage", required = false, defaultValue = "diffiehellman") String activePage, @RequestParam(name="p", required = false, defaultValue = "0") int p, @RequestParam(name="g", required = false, defaultValue = "0") int g, Model model){
         model.addAttribute("activePage", "diffiehellman_choose_p_and_g_submit");
-        setP(BigInteger.valueOf(p));
-        setG(BigInteger.valueOf(g));
-        return "redirect:/diffiehellman_choose_a_and_b";
+        if(isPrime(p)){
+            setP(BigInteger.valueOf(p));
+            setG(BigInteger.valueOf(g));
+            return "redirect:/diffiehellman_choose_a_and_b";
+        } else{
+            return "redirect:/diffiehellman_choose_p_and_g_error";
+        }
+        
     }
 
     @GetMapping("/diffiehellman_choose_a_and_b")
@@ -57,14 +67,27 @@ public class DiffieHellmanController {
         return "index.html";
     }
 
+    @GetMapping("/diffiehellman_choose_a_and_b_error")
+    public String diffiehellman_choose_a_and_b_error(@RequestParam(name="activePage", required = false, defaultValue = "diffiehellman") String activePage, Model model){
+        model.addAttribute("activePage", "diffiehellman_choose_a_and_b_error");
+        model.addAttribute("p", getP());
+        model.addAttribute("g", getG());
+        return "index.html";
+    }
+
     @GetMapping("/diffiehellman_choose_a_and_b_submit")
     public String diffiehellman_choose_a_and_b_submit(@RequestParam(name="activePage", required = false, defaultValue = "diffiehellman") String activePage, @RequestParam(name="a", required = false, defaultValue = "0") int a, @RequestParam(name="b", required = false, defaultValue = "0") int b, Model model){
         model.addAttribute("activePage", "diffiehellman_choose_a_and_b_submit");
         model.addAttribute("p", getP());
         model.addAttribute("g", getG());
-        setA(BigInteger.valueOf(a));
-        setB(BigInteger.valueOf(b));
-        return "redirect:/diffiehellmanresult";
+        // Wenn bei compareTo der erste Wert kleiner ist, wird -1 ausgegeben (Ziel)
+        if(BigInteger.valueOf(a).compareTo(getP())==-1 && BigInteger.valueOf(b).compareTo(getP())==-1){
+            setA(BigInteger.valueOf(a));
+            setB(BigInteger.valueOf(b));
+            return "redirect:/diffiehellmanresult";
+        } else{
+            return "redirect:/diffiehellman_choose_a_and_b_error";
+        }
     }
 
     @GetMapping("/diffiehellmanresult")
@@ -90,6 +113,18 @@ public class DiffieHellmanController {
             System.out.println(getK1());
             System.out.println(getK2());
         }
+    }
+
+    // Primzahl Prüfung
+    public boolean isPrime(int number){
+        if(number <= 1){
+            return false;
+        }
+       for(int i = 2; i <= number/2; i++){
+           if((number%i) == 0)
+               return  false;
+       }
+       return true;
     }
     
 
