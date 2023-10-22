@@ -1,73 +1,271 @@
-<!--Navbar-->
+<!--Aufteilung auf zwei Navbars, das Logo und die Inhalte-Tabs. Das Logo ist fest an der eigentlichen Seite, die Tabs sind erstmal unter dem Logo und gehen nach oben, bis sie von der JS Funktion nach einer festgelegten gescrollten Strecke gestoppt werden. Anschließend bleiben sie am oberen Bildschirmrand. -->
+<!--Navbar fürs Logo-->
 <nav>
   <div class="nav-wrapper blue accent-2">
     <!--Id für Button zum jeweiligen Start der Seite-->
-    <a href="/" id="pagetop" class="brand-logo left">
-      <i class="material-icons">format_list_bulleted</i>Verteilte Systeme</a>
+    <a href="/" id="pagetop" class="brand-logo center">
+      Verteilte Systeme
+      <!--Anchor Tag, id als Referenz für Button-->
+      <div id="pagetop" class="anchor"></div>
+    </a>
+  </div>
+</nav>
+
+<!--Navbar für die Tabs-->
+<nav id="navbar_top">
+  <div class="nav-wrapper blue accent-2">
     <ul class="right hide-on-med-and-down">
 
-      <li class="active" th:if="${activePage == 'home'}">
-        <a th:href="@{/?activePage=home}">
-          <i class="material-icons left">apps</i>Home</a>
-      </li>
-      <li th:unless="${activePage == 'home'}">
-        <a th:href="@{/?activePage=home}">
-          <i class="material-icons left">apps</i>Home</a>
-      </li>
+      <!-- Technische Grundlagen -->
+      <div class="btn-group dropdown-center center">
 
-      <li class="active" th:if="${activePage == 'technische_grundlagen'}">
-        <a th:href="@{?activePage=technische_grundlagen}">
-          <i class="material-icons left">description</i>Technische Grundlagen</a>
-      </li>
-      <li th:unless="${activePage == 'technische_grundlagen'}">
-        <a th:href="@{?activePage=technische_grundlagen}">
-          <i class="material-icons left">description</i>Technische Grundlagen</a>
-      </li>
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'technische_grundlagen'}" style="height: 40px">
+            <a th:href="@{?activePage=technische_grundlagen}">
+              Technische Grundlagen</a>
+          </li>
+          <li th:unless="${activePage == 'technische_grundlagen'}">
+            <a th:href="@{?activePage=technische_grundlagen}">
+              Technische Grundlagen</a>
+          </li>
+        </button>
 
-      <li class="active" th:if="${activePage == 'sicherheit'}">
-        <a th:href="@{?activePage=sicherheit}">
-          <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
-      </li>
-      <li th:unless="${activePage == 'sicherheit'}">
-        <a th:href="@{?activePage=sicherheit}">
-          <i class="material-icons left">description</i>Sicherheit und versch. Verfahren</a>
-      </li>
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#clientserverprinzip}" >Client-Server-Prinzip</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#ip-adresse-in-zwei-versionen}" >IP-Adresse in zwei Versionen</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#protokoll}" >Protokoll</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#router}" >Router</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#switch-hub}" >Switch/Hub</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#lan-und-wlan}" >LAN und WLAN</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#dhcp}" >DHCP</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#gateway}" >Gateway</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#ports}" >Port</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#dns-und-domain}" >DNS und Domain</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#routing-und-routingtabellen}" >Routing und Routingtabellen</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#iso-osi-modell}" >ISO/OSI-Modell</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=technische_grundlagen#netztopologien}" >Netztopologien</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Sicherheit -->
+      <div class="btn-group dropdown-center center">
 
-      <li class="active" th:if="${activePage == 'komplexe_verfahren'}">
-        <a th:href="@{?activePage=komplexe_verfahren}">
-          <i class="material-icons left">description</i>Komplexe Verfahren</a>
-      </li>
-      <li th:unless="${activePage == 'komplexe_verfahren'}">
-        <a th:href="@{?activePage=komplexe_verfahren}">
-          <i class="material-icons left">description</i>Komplexe Verfahren</a>
-      </li>
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'sicherheit'}" style="height: 40px">
+            <a th:href="@{?activePage=sicherheit}">
+              Sicherheit und versch. Verfahren</a>
+          </li>
+          <li th:unless="${activePage == 'sicherheit'}">
+            <a th:href="@{?activePage=sicherheit}">
+              Sicherheit und versch. Verfahren</a>
+          </li>
+        </button>
+        
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=sicherheit#cia_triad}">CIA-Triad</a>
+          </li>
+          
+          <li>
+            <a th:href="@{?activePage=sicherheit#int_auth_und_ver}">Integrität, Authentizität und Vertraulichkeit</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#caesar}">Caesar-Verfahren</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#vigenere}">Vigenere-Verfahren</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#skytale}">Skytale-Verfahren</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#arten_der_verschluesselung}">Arten der Verschlüsselung</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#rsa_verfahren}">RSA-Verfahren</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=sicherheit#diffie_hellman_tausch}">Diffie-Hellman-Tausch</a>
+          </li>
+        </ul>
+      </div>
 
-      <li class="active" th:if="${activePage == 'angriffsarten'}">
-        <a th:href="@{?activePage=angriffsarten}">
-          <i class="material-icons left">description</i>Angriffsarten</a>
-      </li>
-      <li th:unless="${activePage == 'angriffsarten'}">
-        <a th:href="@{?activePage=angriffsarten}">
-          <i class="material-icons left">description</i>Angriffsarten</a>
-      </li>
+      <!-- Komplexe Verfahren -->
+      <div class="btn-group dropdown-center center">
 
-      <li class="active" th:if="${activePage == 'historische_angriffe'}">
-        <a th:href="@{?activePage=historische_angriffe}">
-          <i class="material-icons left">description</i>Historische Angriffe</a>
-      </li>
-      <li th:unless="${activePage == 'historische_angriffe'}">
-        <a th:href="@{?activePage=historische_angriffe}">
-          <i class="material-icons left">description</i>Historische Angriffe</a>
-      </li>
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'komplexe_verfahren'}" style="height: 40px">
+            <a th:href="@{?activePage=komplexe_verfahren}">
+              Komplexe Verfahren</a>
+          </li>
+          <li th:unless="${activePage == 'komplexe_verfahren'}">
+            <a th:href="@{?activePage=komplexe_verfahren}">
+              Komplexe Verfahren</a>
+          </li>
+        </button>
+        
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#hybride_verfahren}">Hybride Verfahren</a>
+          </li>
+          
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#digitale_signaturen}">Digitale Signaturen</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#ssl}">SSL</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#tls}">TLS</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#verschluesselung_im_netz}">Verschlüsselung im Netz</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#ende_zu_ende_verschluesselung}">Ende-Zu-Ende-Verschlüsselung</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=komplexe_verfahren#pgp}">PGP</a>
+          </li>
+        </ul>
+      </div>
 
-      <li class="active" th:if="${activePage == 'interaktive_elemente'}">
-        <a th:href="@{?activePage=interaktive_elemente}">
-          <i class="material-icons left">description</i>Interaktive Elemente</a>
-      </li>
-      <li th:unless="${activePage == 'interaktive_elemente'}">
-        <a th:href="@{?activePage=interaktive_elemente}">
-          <i class="material-icons left">description</i>Interaktive Elemente</a>
-      </li>
+      <!-- Angriffsarten -->
+      <div class="btn-group dropdown-center center">
+
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'angriffsarten'}" style="height: 40px">
+            <a th:href="@{?activePage=angriffsarten}">
+              Angriffsarten</a>
+          </li>
+          <li th:unless="${activePage == 'angriffsarten'}">
+            <a th:href="@{?activePage=angriffsarten}">
+              Angriffsarten</a>
+          </li>
+        </button>
+        
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=angriffsarten#angriffsart 1}" >Angriffsart 1</a>
+          </li>
+
+          <li>
+            <a th:href="@{?activePage=angriffsarten#angriffsart 2}">Angriffsart 2</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=angriffsarten#angriffsart 3}">Angriffsart 3</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=angriffsarten#angriffsart 4}">Angriffsart 4</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=angriffsarten#angriffsart 5}">Angriffsart 5</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Historische Angriffe -->
+      <div class="btn-group dropdown-center center">
+
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'historische_angriffe'}" style="height: 40px">
+            <a th:href="@{?activePage=historische_angriffe}">
+              Historische Angriffe</a>
+          </li>
+          <li th:unless="${activePage == 'historische_angriffe'}">
+            <a th:href="@{?activePage=historische_angriffe}">
+              Historische Angriffe</a>
+          </li>
+        </button>
+        
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=historische_angriffe#historischer_angriff 1}" >Angriffsart 1</a>
+          </li>
+
+          <li>
+            <a th:href="@{?activePage=historische_angriffe#historischer_angriff 2}">Angriffsart 2</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=historische_angriffe#historischer_angriff 3}">Angriffsart 3</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=historische_angriffe#historischer_angriff 4}">Angriffsart 4</a>
+          </li>
+          <li>
+            <a th:href="@{?activePage=historische_angriffe#historischer_angriff 5}">Angriffsart 5</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Interaktive Elemente -->
+      <div class="btn-group dropdown-center center">
+
+        <button class="btn blue accent-2" type="button" aria-expanded="false">
+          <li class="active" th:if="${activePage == 'interaktive_elemente'}" >
+            <a th:href="@{?activePage=interaktive_elemente}">
+              Interaktive Elemente</a>
+          </li>
+          <li th:unless="${activePage == 'interaktive_elemente'}">
+            <a th:href="@{?activePage=interaktive_elemente}">
+              Interaktive Elemente</a>
+          </li>
+        </button>
+        
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split blue accent-2" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu blue accent-2">
+          <li>
+            <a th:href="@{?activePage=interaktive_elemente#diffie_hellman_tausch_interaktiv}">Diffie-Hellman-Tausch</a>
+          </li>
+
+          <li>
+            <a th:href="@{?activePage=interaktive_elemente#rsa_verfahren_interaktiv}">RSA-Verfahren</a>
+          </li>
+        </ul>
+      </div>
     </ul>
   </div>
 </nav>
@@ -78,3 +276,16 @@
       <i class="large material-icons">arrow_upward</i>
   </a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    window.addEventListener('scroll', function() {
+      // Sobald mehr als 54 Pixel (Durchschnittliche Größe der Navbar) gescrollt wurde, wird die untere Navbar am oberen Rand fixiert
+      if (window.scrollY > 54) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+      } else {
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+      } 
+    });
+  }); 
+</script>
