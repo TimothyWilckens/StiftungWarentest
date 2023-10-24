@@ -1,0 +1,38 @@
+<h1>Lückentext Standardlayout</h1>
+<hr>
+
+<!-- Hierbei handelt es sich bisher nur um ein Standardlayout, was beliebig eingesetzt werden kann. Die Texte müssten zu diesem Zweck geändert und die Auswahlmöglichkeiten angepasst werden -->
+<form th:action="@{/lueckentext_submit}" class="row align-items-center">
+    <!-- Ausrichtung und Style behalten das Layout bei, haben aber keine feste Funktion -->
+    <div class="col-auto px-0" style="font-size: 22.5px;">Lorem ipsum dolor sit,</div>
+    <div class="col-auto px-0">
+        <!-- Dies ist das Auswahlfeld, der ausgewählte Wert wird durch th:name an den Controller weitergegeben-->
+        <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer1">
+            <!-- Hier müssen sämtliche Auswahlmöglichkeiten eingetragen werden, könnte später ins Backend verlegt werden, macht das ganze aber im Zweifelsfall zu komplex-->
+            <option value="0">Auswählen</option>
+            <option value="1">Richtig</option>
+            <option value="2">Falsch</option>
+            <option value="3">Falsch</option>
+        </select>
+    </div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">consectetur adipisicing elit.</div>
+    
+    <div class="col-auto px-0" style="font-size: 22.5px;">Et, in omnis odit a, cum impedit facilis sapiente quas temporibus vero blanditiis.</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">
+        <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer2">
+            <option value="0">Auswählen</option>
+            <option value="1">Richtig</option>
+            <option value="2">Falsch</option>
+            <option value="3">Falsch</option>
+        </select>
+    </div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">recusandae magni natus, laborum quia similique facere explicabo!</div>
+    <h1></h1>
+
+<div class="row">
+    <button type="submit" class="btn btn-success mb-3 col-lg-3">Weiter</button>
+</div>
+<div class="row">
+    <!-- Hier muss nicht erst ein Reset gemacht werden, da bisher noch keine Werte eingegeben wurden-->
+    <a class="btn btn-success mb-3 col-lg-3" th:href="@{/?activePage=interaktive_elemente}">Abbrechen</a>
+</div>
