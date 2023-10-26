@@ -1,0 +1,196 @@
+<!--
+Quelle des Ursprungscodes für Caesar Cipher
+Build a Caesar's Cipher
+by kirupa (https://www.kirupa.com/html5/caesar_cipher.htm#)
+-->
+<!--
+Quelle des Ursprungscodes für Range mit Label
+Price Range
+by onyx1812 (https://codepen.io/onyx1812/pen/GRJxmva)
+-->
+
+<h1>Caesar Verfahren Entschlüsselung</h1>
+<hr>
+<div class="row">
+  <div class="col-6">
+    <label for="geheimtext">Geheimtext</label>
+    <input class="mb-5" id="geheimtext" type="text">
+
+    <div class="range-wrap">
+        <div class="range-value" id="rangeV"></div>
+        <input class="form-range" id="key" type="range" min="0" max="26" value="0" step="1">
+    </div>
+
+    <label class="mt-4" for="klartext">Klartext</label>
+    <input id="klartext" type="text" value="" readonly>
+  </div>
+  
+  <div class="col-6">
+    <div class="container">
+      <img class="BigWheel" th:src="@{img/Caesar-Wheel_Aussen.png}" id="wheel" />
+      <img class="SmallWheel" th:src="@{img/Caesar-Wheel_Innen.png}" />
+    </div>
+  </div>
+</div>
+
+<!-- Script Entschlüsselung -->
+<script>
+    let geheimtextInput = document.querySelector("#geheimtext");
+    let keyInput = document.querySelector("#key");
+    let klartextInput = document.querySelector("#klartext");
+
+    let geheimtextMessage = geheimtextInput.value;
+
+    geheimtextInput.addEventListener("input", characterEntered, false);
+    keyInput.addEventListener("input", numberEntered, false);
+
+    function characterEntered(e) {
+      // Ensure we only deal with lowercase letters
+      geheimtextMessage = e.target.value;
+      geheimtextMessage = geheimtextMessage.toLowerCase();
+      geheimtextMessage = geheimtextMessage.replace(/[^a-z]/, '');
+
+      e.target.value = geheimtextMessage;
+
+      // Let's get the party started!
+      startEncryption();
+    }
+
+    function numberEntered(e) {
+      startEncryption();
+    }
+
+    function startEncryption() {
+      let klartextMessage = "";
+      let key = keyInput.value ? Number(keyInput.value) : 0;
+
+      for (letter of geheimtextMessage) {
+        klartextMessage += keyLetter(letter, key);
+      }
+      
+      klartextInput.value = klartextMessage;
+      console.log(klartextMessage);
+
+      // Image Drehung
+      document.getElementById('wheel').style.transform="rotate("+(key/26)*360+"deg)";
+    }
+    startEncryption();
+
+    function keyLetter(letter, key) {
+      let newLetter = "";
+
+      let letterCode = letter.charCodeAt(0);
+      let newLetterCode = letterCode - (key % 26);
+
+      if (newLetterCode < 97) {
+        // If new letter goes below "a" aka character code 97
+        newLetterCode += 26;
+      } else if (newLetterCode > 122) {
+        // If new letter goes past "z" aka character code 122
+        newLetterCode -= 26;
+      }
+
+      newLetter = String.fromCharCode(newLetterCode);
+
+      return newLetter;
+    }
+</script>
+
+<!-- Script Range Label -->
+<script>
+    const
+	range = document.getElementById('key'),
+	rangeV = document.getElementById('rangeV'),
+	setValue = ()=>{
+		const
+			newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
+			newPosition = 10 - (newValue * 0.2);
+		rangeV.innerHTML = `<span>${range.value}</span>`;
+		rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+	};
+    document.addEventListener("DOMContentLoaded", setValue);
+    range.addEventListener('input', setValue);
+</script>
+
+<!-- Style Range Label -->
+<style>
+    input[type=range] {
+	margin: 20px 0;
+	width: 100%;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #03a9f4;
+        border-radius: 25px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -8px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #03a9f4;
+    }
+    .range-wrap{
+        width: 500px;
+        position: relative;
+    }
+    .range-value{
+        position: absolute;
+        top: -50%;
+    }
+    .range-value span{
+        width: 30px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        background: #03a9f4;
+        color: #fff;
+        font-size: 12px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 6px;
+    }
+    .range-value span:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #03a9f4;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -1px;
+    }
+</style>
+
+<!-- Style für Wheel-->
+<style>
+  .container {
+    position: relative;
+  }
+  .BigWheel {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+  }
+  .SmallWheel {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

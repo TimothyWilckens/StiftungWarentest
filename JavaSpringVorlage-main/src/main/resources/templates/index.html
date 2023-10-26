@@ -22,36 +22,52 @@
     <title>Verteilte Systeme</title>
   </head>
   <body>
+    <header>
+      <div th:insert="navbar"></div>
+    </header>
     
-    <div th:insert="navbar"></div>
+    <main>
+      <div class="container" th:insert="${activePage}"></div>
+    </main>
     
-    <div class="container" th:insert="${activePage}"></div>
-    
+    <!--Seitenfooter-->
+    <footer class="page-footer blue accent-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text text-center">Verteilte Systeme by Stiftung Warentest</h5>
+            <p class="grey-text text-lighten-4 text-center">"Stellen Sie sich eine Welt vor, in der das gesamte Wissen der Menschheit jedem frei zugänglich ist." - Jimmy Wales, Mitbegründer von Wikipedia</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" th:href="@{/?activePage=quellen}">Quellen</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://materializecss.com">Materialize CSS</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://getbootstrap.com">Bootstrap</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/TimothyWilckens/StiftungWarentest">Repository mit Quellcode</a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2023 Stiftung Warentest
+        <a class="grey-text text-lighten-4 right" th:href="@{/?activePage=datenschutzerklaerung}">Datenschutzerklärung</a>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
 
-  <!--Seitenfooter-->
-  <footer class="page-footer blue accent-2">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text text-center">Verteilte Systeme by Stiftung Warentest</h5>
-          <p class="grey-text text-lighten-4 text-center">"Stellen Sie sich eine Welt vor, in der das gesamte Wissen der Menschheit jedem frei zugänglich ist." - Jimmy Wales, Mitbegründer von Wikipedia</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" th:href="@{/?activePage=quellen}">Quellen</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://materializecss.com">Materialize CSS</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://getbootstrap.com">Bootstrap</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/TimothyWilckens/StiftungWarentest">Repository mit Quellcode</a></li>
-          </ul>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2023 Stiftung Warentest
-      <a class="grey-text text-lighten-4 right" th:href="@{/?activePage=datenschutzerklaerung}">Datenschutzerklärung</a>
-    </div>
-  </footer>
+  
 </html>
+<style>
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+</style>
