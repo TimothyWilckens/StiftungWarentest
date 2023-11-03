@@ -24,8 +24,7 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            Wenn eine Partei eine Nachricht an die andere senden möchte, verwendet sie den öffentlichen Schlüssel des Empfängers, um die Nachricht zu verschlüsseln. Dies bedeutet, dass nur der Empfänger die Nachricht entschlüsseln kann, da nur er den privaten Schlüssel hat, der zur Entschlüsselung benötigt wird.            
         </p>
     </div>
     <div class="col s6">
@@ -42,8 +41,7 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            Digitale Signaturen sind eine wichtige Methode, um die Integrität, Authentizität und Vertraulichkeit digitaler Dokumente und Nachrichten sicherzustellen. Sie basieren auf kryptografischen Verfahren und dienen dazu, sicherzustellen, dass eine Nachricht von einer bestimmten Person stammt und während der Übertragung nicht verändert wurde. Der Prozess fängt mit der Erstellung eines Schlüsselpaares. Er besteht aus einem privaten und öffentlichen Schlüssel. Um eine Nachricht digital zu signieren, verwendet der Sender seinen privaten Schlüssel und einen Signaturalgorithmus. Der Signaturalgorithmus erstellt eine eindeutige digitale Signatur, die mathematisch mit der Nachricht verknüpft ist. Diese Signatur wird zusammen mit der Nachricht verschickt. Der Empfänger erhält die Nachricht und die Signatur des Senders sowie den öffentlichen Schlüssel des Senders, den er zuvor erhalten hat. Der Empfänger verwendet den öffentlichen Schlüssel des Senders und den gleichen Signaturalgorithmus, um die erhaltene Signatur zu überprüfen. Wenn die berechnete Signatur mit der in der Nachricht enthaltenen Signatur übereinstimmt, ist die Signatur gültig. Wenn die Signatur erfolgreich überprüft wird, weiß der Empfänger, dass die Nachricht tatsächlich vom Absender stammt und während der Übertragung nicht verändert wurde. Dies stellen die Authentizität und Integrität der Nachricht sicher. 
         </p>
     </div>
     <div class="col s6">
@@ -61,8 +59,7 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            SSL war das Vorgängerprotokoll von TLS und diente ebenfalls dazu, die Sicherheit von Datenübertragungen über das Internet zu gewährleisten. Obwohl SSL inzwischen weitgehend veraltet ist und durch neuere TLS-Versionen ersetzt wurde (TLS 1.0, 1.1, 1.2, 1.3), wird der Begriff "SSL" immer noch oft informell verwendet, um sich auf Sicherheitszertifikate und verschlüsselte Verbindungen im Allgemeinen zu beziehen. 
         </p>
     </div>
     <div class="col s6">
@@ -80,8 +77,7 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            TLS ist ein Sicherheitsprotokoll, das verwendet wird, um die Kommunikation zwischen einem Client (z. B. Webbrowser) und einem Server (z. B. Webserver) über das Internet zu sichern. TLS bietet Verschlüsselung, Authentifizierung und Integritätsschutz für die übertragenen Daten, wodurch die Vertraulichkeit und Sicherheit der Kommunikation gewährleistet werden. 
         </p>
     </div>
     <div class="col s6">
@@ -99,8 +95,39 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            Verwaltung von Netzwerkschlüsseln 
+
+ 
+
+Erzeugung von Schlüsseln: 
+
+Der erste Schritt in der Schlüsselverwaltung besteht darin, kryptografische Schlüssel zu generieren. Dies können symmetrische Schlüssel sein, die für Verschlüsselung und Entschlüsselung verwendet werden, oder asymmetrische Schlüsselpaare, die für Public-Key-Kryptografie eingesetzt werden. 
+
+Speicherung von Schlüsseln: 
+
+Sicherheitsrichtlinien erfordern oft, dass Schlüssel sicher gespeichert werden, um unbefugten Zugriff zu verhindern. Dies kann Hardware-Sicherheitsmodule (HSMs) oder sichere Software-Speichermechanismen umfassen. 
+
+Verteilung von Schlüsseln: 
+
+Um verschlüsselte Kommunikation in einem Netzwerk zu ermöglichen, müssen die Schlüssel sicher an die Kommunikationspartner verteilt werden. Dies kann durch sichere Protokolle wie das Diffie-Hellman-Schlüsselaustauschverfahren erfolgen. 
+
+Regenerierung und Aktualisierung von Schlüsseln: 
+
+Kryptografische Schlüssel haben eine begrenzte Lebensdauer aus Sicherheitsgründen. Sie sollten regelmäßig neu generiert oder aktualisiert werden, um sicherzustellen, dass selbst im Falle eines Kompromisses die Daten weiterhin geschützt sind. 
+
+Überwachung und Auditing: 
+
+Netzwerkschlüsselverwaltungssysteme überwachen oft die Nutzung von Schlüsseln und können verdächtige Aktivitäten erkennen. Darüber hinaus ermöglichen sie die Protokollierung von Schlüsselaktivitäten für Prüfungszwecke. 
+
+Sicherheitsrichtlinien und Zugriffskontrolle: 
+
+Die Verwaltung von Netzwerkschlüsseln erfordert klare Sicherheitsrichtlinien und Zugriffskontrollen, um sicherzustellen, dass nur autorisierte Personen auf Schlüssel zugreifen und diese verwalten können. 
+
+Notfallwiederherstellung: 
+
+Im Falle eines Schlüsselverlusts oder -kompromisses müssen Notfallwiederherstellungsverfahren vorhanden sein, um sicherzustellen, dass die Netzwerkkommunikation fortgesetzt werden kann. 
+
+ 
         </p>
     </div>
     <div class="col s6">
@@ -118,8 +145,53 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            End-to-End-Verschlüsselung 
+
+Schlüsselerzeugung: 
+
+Jede Kommunikationspartei erzeugt ein Schlüsselpaar, das aus einem öffentlichen und einem privaten Schlüssel besteht. Der öffentliche Schlüssel wird zur Verschlüsselung verwendet, während der private Schlüssel zur Entschlüsselung benötigt wird. 
+
+Verschlüsselung: 
+
+Wenn eine Partei eine Nachricht an die andere senden möchte, verwendet sie den öffentlichen Schlüssel des Empfängers, um die Nachricht zu verschlüsseln. Dies bedeutet, dass nur der Empfänger die Nachricht entschlüsseln kann, da nur er den privaten Schlüssel hat, der zur Entschlüsselung benötigt wird. 
+
+Die Nachricht wird mit Hilfe von Verschlüsselungsalgorithmen und dem öffentlichen Schlüssel des Empfängers in eine unleserliche Form (Ciphertext) umgewandelt. 
+
+Übertragung: 
+
+Die verschlüsselte Nachricht wird übertragen, sei es über das Internet, Mobilfunknetze oder andere Kommunikationsmittel. Während der Übertragung bleibt die Nachricht verschlüsselt und für Dritte unlesbar. 
+
+Entschlüsselung: 
+
+Der Empfänger verwendet seinen privaten Schlüssel, um den Ciphertext in die ursprüngliche Nachricht (Klartext) zurückzuverwandeln. Dies geschieht mithilfe von Entschlüsselungsalgorithmen. 
+
+Nur der Empfänger mit dem entsprechenden privaten Schlüssel kann die Nachricht entschlüsseln und den Inhalt lesen. 
+
+Sicherheit: 
+
+Die Sicherheit von E2E-Verschlüsselung beruht auf der Geheimhaltung des privaten Schlüssels. Solange der private Schlüssel sicher aufbewahrt wird und nicht kompromittiert ist, bleibt die Kommunikation vertraulich. 
+
+ 
+
+ 
+
+Schlüsselerzeugung: Alice und Bob erzeugen jeweils ein Schlüsselpaar, bestehend aus einem öffentlichen und einem privaten Schlüssel, für die End-to-End-Verschlüsselung. 
+
+  
+
+Öffentliche Schlüssel austauschen: Alice und Bob tauschen ihre öffentlichen Schlüssel aus, damit sie Nachrichten miteinander verschlüsseln können. Dieser Austausch kann auf verschiedene Arten erfolgen, einschließlich QR-Codes, persönlicher Verifizierung oder über eine Vertrauenskette. 
+
+  
+
+Verschlüsselung der Nachricht: Wenn Alice eine Nachricht an Bob sendet, verwendet sie Bobs öffentlichen Schlüssel, um die Nachricht zu verschlüsseln. Dadurch wird die Nachricht in einen für Dritte unlesbaren Ciphertext umgewandelt. 
+
+  
+
+Übertragung der verschlüsselten Nachricht: Die verschlüsselte Nachricht wird über das Messaging-Netzwerk an Bob gesendet. Während der Übertragung bleibt die Nachricht verschlüsselt und kann nicht von Dritten gelesen werden. 
+
+  
+
+Entschlüsselung der Nachricht: Wenn Bob die Nachricht empfängt, verwendet er seinen privaten Schlüssel, um die Nachricht zu entschlüsseln und den ursprünglichen Inhalt zu sehen. 
         </p>
     </div>
     <div class="col s6">
@@ -137,8 +209,7 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            PGP ist eine Form der Verschlüsselung von E-Mails. Dadurch können die E-Mails vor dem Versenden verschlüsselt werden und erst beim Empfänger wieder entschlüsselt werden. Die Pretty Good Privacy-Verschlüsselung arbeitet mit dem Public Key Verfahren. Dieser Public Key wird verwendet, um die E-Mails sicherzustellen. Wenn eine verschlüsselte E-Mail dann verschickt wird, wird ein zufälliger Schlüssel erstellt. Dieser codiert die Daten, die geheim versendet werden sollen. Der Public Key des Empfängers wird dann benutzt, um den zufälligen Schlüssel zu verschlüsseln, dadurch werden beide Schlüssel übertragen. Der Empfänger kann dann mit seinem Privat Key die PGP-Verschlüsselung legitim entschlüsseln und der Empfänger hat dadurch0 Zugriff auf den Inhalt der E- Mail.  
         </p>
     </div>
     <div class="col s6">
