@@ -13,20 +13,26 @@
 
 <!--Navbar für die Tabs-->
 <nav id="navbar_top">
-  <div class="nav-wrapper blue accent-2">
-    <ul class="d-flex align-content-start flex-wrap justify-content-center">
+  <div class="nav-wrapper d-flex flex-wrap blue accent-2">
+    <ul class="row justify-content-center">
 
       <!-- Technische Grundlagen -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'technische_grundlagen'}" style="height: 40px">
             <a th:href="@{?activePage=technische_grundlagen}">
-              Technische Grundlagen</a>
+              <span class="text-truncate" style="max-width: 150px;">
+                Techn. Grundlagen
+              </span>
+            </a>
           </li>
           <li th:unless="${activePage == 'technische_grundlagen'}">
-            <a th:href="@{?activePage=technische_grundlagen}">
-              Technische Grundlagen</a>
+            <a class="text-truncate" th:href="@{?activePage=technische_grundlagen}">
+              <span class="text-truncate"  style="max-width: 150px;">
+                Techn. Grundlagen
+              </span>
+            </a>
           </li>
         </button>
 
@@ -77,16 +83,16 @@
       </div>
       
       <!-- Sicherheit -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'sicherheit'}" style="height: 40px">
-            <a th:href="@{?activePage=sicherheit}">
-              Sicherheit und versch. Verfahren</a>
+            <a class="text-truncate" th:href="@{?activePage=sicherheit}">
+              Sicherheit</a>
           </li>
           <li th:unless="${activePage == 'sicherheit'}">
-            <a th:href="@{?activePage=sicherheit}">
-              Sicherheit und versch. Verfahren</a>
+            <a class="text-truncate" th:href="@{?activePage=sicherheit}">
+              Sicherheit</a>
           </li>
         </button>
         
@@ -123,15 +129,15 @@
       </div>
 
       <!-- Komplexe Verfahren -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'komplexe_verfahren'}" style="height: 40px">
-            <a th:href="@{?activePage=komplexe_verfahren}">
+            <a class="text-truncate" th:href="@{?activePage=komplexe_verfahren}">
               Komplexe Verfahren</a>
           </li>
           <li th:unless="${activePage == 'komplexe_verfahren'}">
-            <a th:href="@{?activePage=komplexe_verfahren}">
+            <a class="text-truncate" th:href="@{?activePage=komplexe_verfahren}">
               Komplexe Verfahren</a>
           </li>
         </button>
@@ -166,15 +172,15 @@
       </div>
 
       <!-- Angriffsarten -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'angriffsarten'}" style="height: 40px">
-            <a th:href="@{?activePage=angriffsarten}">
+            <a class="text-truncate" th:href="@{?activePage=angriffsarten}">
               Angriffsarten</a>
           </li>
           <li th:unless="${activePage == 'angriffsarten'}">
-            <a th:href="@{?activePage=angriffsarten}">
+            <a class="text-truncate" th:href="@{?activePage=angriffsarten}">
               Angriffsarten</a>
           </li>
         </button>
@@ -203,15 +209,15 @@
       </div>
 
       <!-- Historische Angriffe -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'historische_angriffe'}" style="height: 40px">
-            <a th:href="@{?activePage=historische_angriffe}">
+            <a class="text-truncate" th:href="@{?activePage=historische_angriffe}">
               Historische Angriffe</a>
           </li>
           <li th:unless="${activePage == 'historische_angriffe'}">
-            <a th:href="@{?activePage=historische_angriffe}">
+            <a class="text-truncate" th:href="@{?activePage=historische_angriffe}">
               Historische Angriffe</a>
           </li>
         </button>
@@ -240,15 +246,15 @@
       </div>
 
       <!-- Interaktive Elemente -->
-      <div class="btn-group dropdown-center center">
+      <div class="col px-0 btn-group btn-group-sm dropdown-center center">
 
-        <button class="btn blue accent-2" type="button" aria-expanded="false">
+        <button class="btn btn-sm px-0 blue accent-2" type="button" aria-expanded="false">
           <li class="active" th:if="${activePage == 'interaktive_elemente'}" >
-            <a th:href="@{?activePage=interaktive_elemente}">
+            <a class="text-truncate" th:href="@{?activePage=interaktive_elemente}">
               Interaktive Elemente</a>
           </li>
           <li th:unless="${activePage == 'interaktive_elemente'}">
-            <a th:href="@{?activePage=interaktive_elemente}">
+            <a class="text-truncate" th:href="@{?activePage=interaktive_elemente}">
               Interaktive Elemente</a>
           </li>
         </button>

@@ -42,9 +42,28 @@ public RsaVerfahrenController(){
         return "index.html";
     }
     
-
+    public void generateRSAKeys() {
+        // Berechne n
+        n = p.multiply(q);
     
-
+        // Berechne φ(n) (totient-Funktion)
+        BigInteger phi = (p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
+    
+        // Wähle d so, dass d*e ≡ 1 (mod φ(n))
+        d = e.modInverse(phi);
+    }
+    
+    public BigInteger encrypt(BigInteger plaintext) {
+        // Verschlüsselung: c = plaintext^e % n
+        return plaintext.modPow(e, n);
+    }
+    
+    public BigInteger decrypt(BigInteger ciphertext) {
+        // Entschlüsselung: plaintext = ciphertext^d % n
+        return ciphertext.modPow(d, n);
+    }
+    
+ 
           
     public void setP(BigInteger p) {
         this.p = p;
@@ -86,6 +105,7 @@ public RsaVerfahrenController(){
     public BigInteger getE() {
         return e;
     }
+    
     
 }
 
