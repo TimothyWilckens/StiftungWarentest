@@ -6,14 +6,14 @@
 <h3>Inhalte:</h3>
 <!--Links zu Abschnitten der Seite, Referenzen zu Abschnittsüberschriften-->
 <div class="collection">
-    <a href="#angriffsart 1" class="collection-item">Angriffsart 1</a>
-    <a href="#angriffsart 2" class="collection-item">Angriffsart 2</a>
-    <a href="#angriffsart 3" class="collection-item">Angriffsart 3</a>
-    <a href="#angriffsart 4" class="collection-item">Angriffsart 4</a>
-    <a href="#angriffsart 5" class="collection-item">Angriffsart 5</a>
-    <a href="#angriffsart 6" class="collection-item">Angriffsart 6</a>
-    <a href="#angriffsart 7" class="collection-item">Angriffsart 7</a>
-    <a href="#angriffsart 8" class="collection-item">Angriffsart 8</a>
+    <a href="#Brute-Force" class="collection-item">Brute-Force</a>
+    <a href="#Known-Plaintext" class="collection-item">Known-Plaintext</a>
+    <a href="#DDoS" class="collection-item">DDoS</a>
+    <a href="#Man-in-the-Middle" class="collection-item">Man-in-the-Middle</a>
+    <a href="#SQL-Injection" class="collection-item">SQL-Injection</a>
+    <a href="#Phishing" class="collection-item">Phishing</a>
+    <a href="#Botnetze" class="collection-item">Botnetze</a>
+    <a href="#Ransomware" class="collection-item">Ransomware</a>
 
 
 
@@ -22,13 +22,77 @@
 <!--Content, durch Überschriften eingeteilt-->
 <h4>
     <!--Anchor Tag, id als referenz-->
-    <div id="angriffsart 1" class="anchor"></div>
-    <a>Angriffsart 1</a>
+    <div id="Brute-Force" class="anchor"></div>
+    <a>Brute-Force</a>
 </h4>
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
+            <h6>Technische Vorgänge: </h6>
+            Es werden alle möglichen Passwortkombinationen durchgegangen, wobei es je nach Länge und Art des Passworts, also ob etwa Zahlen, Buchstaben (klein oder groß), Sonderzeichen oder eine Kombination aus mehreren verwendet wird.   
+            <h6>Gefahrenpotential:</h6>
+            Bei kurzen oder rein numerischen Passwörtern benötigt ein Computer nur sehr wenig Zeit, um die richtige Kombination herauszufinden, daher sind solche Passwörter sehr anfällig für derartige Angriffe 
+        </p>
+    </div>
+    <div class="col s6">
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
+    </div>
+</div>
+
+<!--Content, durch Überschriften eingeteilt-->
+<h4>
+    <!--Anchor Tag, id als referenz-->
+    <div id="Known-Plaintext" class="anchor"></div>
+    <a>Known-Plaintext</a>
+</h4>
+<div class="row">
+    <div class="col s6">
+        <p>
+            <h6>Technische Vorgänge: </h6>
+            Der Angreifer besitzt mindestens einen Teil des Klartextes als auch einen Teil des Geheimtextes. Dadurch ist er in der Lage, den Schlüssel herauszufinden und somit weitere Kommunikation zu entschlüsseln 
+            <h6>Gefahrenpotential:</h6>
+            Wenn ein dauerhafter Schlüssel verwendet wird, ist es möglich durch bekannte Abschnitte der Nachricht zu gehen und den verschlüsselten und unverschlüsselten Teil zu vergleichen. Dadurch kann etwa die Caesar-Verschlüsselung ohne weiteres geknackt werden, da direkt auf den Schlüssel geschlossen werden kann 
+        </p>
+    </div>
+    <div class="col s6">
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
+    </div>
+</div>
+
+<!--Content, durch Überschriften eingeteilt-->
+<h4>
+    <!--Anchor Tag, id als referenz-->
+    <div id="DDoS" class="anchor"></div>
+    <a>DDoS</a>
+</h4>
+<div class="row">
+    <div class="col s6">
+        <p>
+            <strong>Technische Vorgänge: </strong>
+            <h6></h6>
+            DDoS (Distributed Denial of Service) Attacken beschreiben einen Angriff, bei dem das Ziel, meist ein Webserver, durch ein Übermaß an Anfragen daran zu hindern, reguläre Anfragen zu bearbeiten. Dabei wird die einfache Variante als DoS-Attacke bezeichnet, bei der der Angriff von einer einzigen Quelle abläuft. Dies stellt nur eine geringe Gefahr dar, da die Quelle einfach vom Server gesperrt werden kann. Im Gegensatz dazu greift eine DDoS-Attacke von vielen verschiedenen Quellen aus an. Dabei wird meist auf ein Botnet zurückgegriffen, um eine große Anzahl an Geräten nutzen zu können 
+            <h6>Gefahrenpotential:</h6>
+            Bei kleinen Servern reicht bereits eine kleine Anzahl an Geräten aus, allerdings kann es auch bei großen Servern zu Problemen kommen, wenn etwa ein weit verbreitetes Botnetz für den Angriff genutzt wird. Dabei kann dies wie bei allen Angriffen auch Auswirkungen außerhalb des eigentlichen Ziels haben, da etwa Dienste, die sonst über diesen Server laufen, blockiert werden. Einige der größten Angriffe betrafen dabei auch Google oder AWS, wobei teils das Mirai-Botnet genutzt wurde, um eine massive Menge an Datenverkehr von bis zu 2.5 Tbps (Terabyte per second) zu erzeugen 
+        </p>
+    </div>
+    <div class="col s6">
+        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
+    </div>
+</div>
+
+<!--Content, durch Überschriften eingeteilt-->
+<h4>
+    <!--Anchor Tag, id als referenz-->
+    <div id="Man-in-the-Middle" class="anchor"></div>
+    <a>Man-in-the-Middle</a>
+</h4>
+<div class="row">
+    <div class="col s6">
+        <p>
+            <h6>Technische Vorgänge: </h6>
+            Angreifer schleust sich zwischen den Kommunikationspartnern oder dem Client und dem Server ein. Bei einem MitM-Angriff bei einer Kommunikation zwischen zwei Personen, welche etwa das RSA-Verfahren verwenden, kann der Angreifer an beide Partner den eigenen Schlüssel schicken, wodurch beide Parteien diesen falschen Schlüssel nutzen und dem Angreifer die Möglichkeit geben, die Kommunikation zu entschlüsseln. Anschließend kann der Angreifer die richtigen öffentlichen Schlüssel nutzen, wodurch die Nachricht korrekt verschlüsselt beim Kommunikationspartner ankommt und außer einer leichten Verzögerung kein Hinweis auf einen unbefugten Zugriff enthält. Ähnlich läuft es bei einer Kommunikation Client-Server. Dabei gibt sich der Angreifer als der jeweilige Kommunikationspartner aus und leitet Requests und Responses in Echtzeit weiter, wobei etwa Passwörter oder Bankdaten abgefangen werden können. 
+            <h6>Gefahrenpotential:</h6>
+            Durch diesen Angriff können Kommunikationen in jeder Form offengelegt und etwa Kontonummern oder Logindaten gestohlen werden. Dies kann durch wechselseitige Zertifikate verhindert werden, welche sicherstellen, dass es sich um den richtigen Kommunikationspartner handelt und keine Dritte die Nachrichten abfangen und weiterleiten. 
             
         </p>
     </div>
@@ -40,68 +104,17 @@
 <!--Content, durch Überschriften eingeteilt-->
 <h4>
     <!--Anchor Tag, id als referenz-->
-    <div id="angriffsart 2" class="anchor"></div>
-    <a>Angriffsart 2</a>
+    <div id="SQL-Injection" class="anchor"></div>
+    <a>SQL-Injection</a>
 </h4>
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
-        </p>
-    </div>
-    <div class="col s6">
-        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
-    </div>
-</div>
+            <h6>Technische Vorgänge: </h6>
+            Bei diesem Angriff werden die Eigenschaften der Abfragesprache SQL genutzt, welche die Grundlage für den Aufbau für Datenbanken bildet. Dabei werden Eingabefelder in Formularen missbraucht, um Teile eines SQL-Befehls einzuschleusen, welcher den Zugriff auf private Datenbanken oder sogar die totale Kontrolle über den Server ermöglicht. Es gibt aber auch Arten, die nur genutzt werden, um die Struktur des Servers etwa durch Tests hinsichtlich der Verarbeitung der Daten oder der ausgegebenen Fehlermeldungen analysiert. 
+            <h6>Gefahrenpotential:</h6>
+            SQL-Injection ist einfach zu nutzen und zu verhindern, etwa durch Prepared Statements, es werden also nur vorgefertigte Abfragen ermöglicht, oder vom Nutzer eingefügte Daten werden von der Datenbank nicht als Befehl erkannt, was auch die Gefahr für den unbeabsichtigten Einbau eines Befehls durch den Nutzer minimiert. 
 
-<!--Content, durch Überschriften eingeteilt-->
-<h4>
-    <!--Anchor Tag, id als referenz-->
-    <div id="angriffsart 3" class="anchor"></div>
-    <a>Angriffsart 3</a>
-</h4>
-<div class="row">
-    <div class="col s6">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
-        </p>
-    </div>
-    <div class="col s6">
-        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
-    </div>
-</div>
-
-<!--Content, durch Überschriften eingeteilt-->
-<h4>
-    <!--Anchor Tag, id als referenz-->
-    <div id="angriffsart 4" class="anchor"></div>
-    <a>Angriffsart 4</a>
-</h4>
-<div class="row">
-    <div class="col s6">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
-        </p>
-    </div>
-    <div class="col s6">
-        <img th:src="@{img/clientserver.jpg}" alt="clientserver not found"/>
-    </div>
-</div>
-
-<!--Content, durch Überschriften eingeteilt-->
-<h4>
-    <!--Anchor Tag, id als referenz-->
-    <div id="angriffsart 5" class="anchor"></div>
-    <a>Angriffsart 5</a>
-</h4>
-<div class="row">
-    <div class="col s6">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
         </p>
     </div>
     <div class="col s6">
@@ -110,13 +123,15 @@
 </div>
 
 <h4>
-<div id="angriffsart 6" class="anchor"></div>
-    <a>Angriffsart 6</a>
+<div id="Phishing" class="anchor"></div>
+    <a>Phishing</a>
     </h4>
 <div class="row">
 <div class="col s6">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
+        <h6>Technische Vorgänge: </h6>
+        Phishing-Angriffe gehört zu den weitverbreitetsten Formen des Social Engineerings und zielt darauf ab, Nutzer entweder zum Aktivieren von Malware zu verleiten, private Daten weiterzugeben oder durch andere Handlungen einen Angriff zu ermöglichen. Dabei kann Phishing auf verschiedenen Wegen stattfinden: per Massen-E-Mails, bei denen der Sender sich etwa als seriöse Firma ausgibt und viele Millionen Mails verschickt, was die Wahrscheinlichkeit eines Treffers erhöht; per Spear-Phishing, wobei eine einzelne Person studiert und ein auf sie zugeschnittener Angriff durchgeführt wird; oder SMS- bzw. Voice-Phishing, wobei per SMS oder Anruf eine legitim aussehende Anfrage etwa bezüglich eine Bankverbindung gestellt wird, welche allerdings vom Angreifer verschickt wurde. 
+        <h6>Gefahrenpotential:</h6>
         
     </p>
 </div>
@@ -126,14 +141,14 @@
 </div>
 
 <h4>
-<div id="angriffsart 7" class="anchor"></div>
-    <a>Angriffsart 7</a>
+<div id="Botnetze" class="anchor"></div>
+    <a>Botnetze</a>
     </h4>
 <div class="row">
 <div class="col s6">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-        
+        <h6>Technische Vorgänge: </h6>
+        <h6>Gefahrenpotential:</h6>
     </p>
 </div>
 <div class="col s6">
@@ -143,14 +158,14 @@
 
 
     <h4>
-    <div id="angriffsart 8" class="anchor"></div>
-    <a>Angriffsart 8</a>
+    <div id="Ransomware" class="anchor"></div>
+    <a>Ransomware</a>
 </h4>
 <div class="row">
 <div class="col s6">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-        
+        <h6>Technische Vorgänge: </h6>
+        <h6>Gefahrenpotential:</h6>
     </p>
 </div>
 <div class="col s6">
