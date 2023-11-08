@@ -1,12 +1,26 @@
-<h1>RSA Verfahren</h1>
-<hr>
-
-<h1>
-    Under Construction
-</h1>
-
-<h1></h1>
-
-<a class="btn btn-success mb-3" th:href="@{/?activePage=interaktive_elemente}">Zurück</a>
-
-<a class="btn btn-success mb-3" th:href="@{/?activePage=sicherheit#rsa_verfahren}">Sicherheit: RSA Verfahren</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Verfahren</title>
+</head>
+<body>
+    <h1>RSA Verfahren</h1>
+    
+    <p>Bitte wählen Sie eine Aktion:</p>
+    
+    <form action="/verschluesseln" method="post">
+        <label for="plaintext">Klartext: </label>
+        <input type="text" id="plaintext" name="plaintext" required>
+        <input type="submit" value="Verschlüsseln">
+    </form>
+    
+    <form action="/entschluesseln" method="post">
+        <label for="ciphertext">Geheimtext: </label>
+        <input type="text" id="ciphertext" name="ciphertext" required>
+        <input type="submit" value="Entschlüsseln">
+    </form>
+    
+    <p>Verschlüsselter Text: <span id="encryptedText"></span></p>
+    <p>Entschlüsselter Text: <span id="decryptedText"></span></p>
+</body>
+</html>
