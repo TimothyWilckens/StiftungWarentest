@@ -2,25 +2,98 @@
 <html>
 <head>
     <title>RSA Verfahren</title>
+    <script>
+        // Define RSA parameters (n, e, d, p, q)
+        let n, e, d, p, q;
+
+        // Function to generate an RSA key pair
+        function generateKeys() {
+            p = Number(document.getElementById("p").value);
+            q = Number(document.getElementById("q").value);
+            e = Number(document.getElementById("e").value);
+
+            n = p * q;
+            const phi = (p - 1) * (q - 1);
+            
+            d = findMultiplicativeInverse(e, phi);
+            
+            document.getElementById("nValue").textContent = "n: " + n;
+            document.getElementById("dValue").textContent = "d: " + d;
+        }
+
+        // Function to calculate the multiplicative inverse of 'a' modulo 'm'
+        function findMultiplicativeInverse(a, m) {
+            for (let x = 1; x < m; x++) {
+                if ((a * x) % m === 1) {
+                    return x;
+                }
+            }
+            return 1;
+        }
+
+        // Function to encrypt text
+        function encryptText() {
+            const plaintext = document.getElementById("plaintext").value;
+            const encryptedResult = rsaEncrypt(plaintext, e, n);
+            document.getElementById("encryptedText").textContent = "Verschlüsselter Text: " + encryptedResult;
+        }
+
+        // Function to decrypt text
+        function decryptText() {
+            const ciphertext = document.getElementById("ciphertext").value;
+            const decryptedResult = rsaDecrypt(ciphertext, d, n);
+            document.getElementById("decryptedText").textContent = "Entschlüsselter Text: " + decryptedResult;
+        }
+
+        // Function to encrypt text using RSA
+        function rsaEncrypt(plaintext, e, n) {
+            // Implement RSA encryption logic with the given plaintext, public exponent (e), and modulus (n)
+            // Return the encrypted result
+            return plaintext; // Replace with actual encryption logic
+        }
+
+        // Function to decrypt text using RSA
+        function rsaDecrypt(ciphertext, d, n) {
+            // Implement RSA decryption logic with the given ciphertext, private exponent (d), and modulus (n)
+            // Return the decrypted result
+            return ciphertext; // Replace with actual decryption logic
+        }
+    </script>
 </head>
 <body>
     <h1>RSA Verfahren</h1>
     
+    <p>Bitte geben Sie die RSA-Parameter ein:</p>
+    
+    <label for="p">p (Primzahl): </label>
+    <input type="number" id="p" required>
+    
+    <label for="q">q (Primzahl): </label>
+    <input type="number" id="q" required>
+    
+    <label for="e">e (öffentlicher Exponent): </label>
+    <input type="number" id="e" required>
+    
+    <input type="button" value="Schlüssel generieren" onclick="generateKeys()">
+    
+    <p id="nValue">n: </p>
+    <p id="dValue">d: </p>
+    
     <p>Bitte wählen Sie eine Aktion:</p>
     
-    <form action="/verschluesseln" method="post">
+    <form>
         <label for="plaintext">Klartext: </label>
-        <input type="text" id="plaintext" name="plaintext" required>
-        <input type="submit" value="Verschlüsseln">
+        <input type="text" id="plaintext" required>
+        <input type="button" value="Verschlüsseln" onclick="encryptText()">
     </form>
     
-    <form action="/entschluesseln" method="post">
+    <form>
         <label for="ciphertext">Geheimtext: </label>
-        <input type="text" id="ciphertext" name="ciphertext" required>
-        <input type="submit" value="Entschlüsseln">
+        <input type="text" id="ciphertext" required>
+        <input type="button" value="Entschlüsseln" onclick="decryptText()">
     </form>
     
-    <p>Verschlüsselter Text: <span id="encryptedText"></span></p>
-    <p>Entschlüsselter Text: <span id="decryptedText"></span></p>
+    <p><span id="encryptedText"></span></p>
+    <p><span id="decryptedText"></span></p>
 </body>
 </html>
