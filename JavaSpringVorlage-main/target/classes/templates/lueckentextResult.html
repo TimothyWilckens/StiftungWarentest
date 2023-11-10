@@ -9,44 +9,44 @@
 
 <form th:action="@{/lueckentextResult_submit}" class="row align-items-center">
 
-    <div class="col-auto px-0" style="font-size: 22.5px;">Lorem ipsum dolor sit,</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">Ein Port ist eine numerische Kennung, die verwendet wird, um bestimmte</div>
     <div class="col-auto px-0">
         <!-- Wenn ein Feld richtig angegeben wurde, wird hier der richtige Text angezeigt und mit einem grünen Hintergrund hervorgehoben -->
         <div th:if="${Result1} == true">
             <div class="text-white px-1" style="font-size: 20px; background-color: #6bbb96;">
                 <!-- Hier muss auch noch die jeweilige richtige Antwort eingefügt werden -->
-                Richtig
+                Dienste
             </div>
         </div>
         <div th:unless="${Result1 == true}">
             <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer1">
                 <option value="0">Auswählen</option>
-                <option value="1">Richtig</option>
-                <option value="2">Falsch</option>
-                <option value="3">Falsch</option>
+                <option value="1">Dienste</option>
+                <option value="2">Router</option>
+                <option value="3">Nutzer</option>
             </select>
         </div>
     </div>
     
-    <div class="col-auto px-0" style="font-size: 22.5px;">consectetur adipisicing elit.</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">in einem Computernetzwerk zu identifizieren.</div>
     
-    <div class="col-auto px-0" style="font-size: 22.5px;">Et, in omnis odit a, cum impedit facilis sapiente quas temporibus vero blanditiis.</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">Ports ermöglichen es mehreren Anwendungen auf demselben Gerät, gleichzeitig Netzwerkverbindungen herzustellen, da der</div>
     <div class="col-auto px-0">
-        <div th:if="${Result2} == true">
+        <div th:if="${Result1} == true">
             <div class="text-white px-1" style="font-size: 20px; background-color: #6bbb96;">
-                Richtig
+                Datenverkehr
             </div>
         </div>
-        <div th:unless="${Result2 == true}">
-            <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer2">
+        <div th:unless="${Result1 == true}">
+            <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer1">
                 <option value="0">Auswählen</option>
-                <option value="1">Richtig</option>
-                <option value="2">Falsch</option>
-                <option value="3">Falsch</option>
+                <option value="1">Datenverkehr</option>
+                <option value="2">Nutzer</option>
+                <option value="3">Computer</option>
             </select>
         </div>
     </div>
-    <div class="col-auto px-0" style="font-size: 22.5px;">recusandae magni natus, laborum quia similique facere explicabo!</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">anhand der Kombination aus IP-Adresse und Portnummer geroutet wird.</div>
     <h1></h1>
 
 <!-- Hier wird nochmal geprüft, ob der Lückentext bestanden wurde, um andere Buttons anzuzeigen-->
