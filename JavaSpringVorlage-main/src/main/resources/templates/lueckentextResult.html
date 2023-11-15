@@ -34,19 +34,19 @@
     <div class="col-auto px-0">
         <div th:if="${Result1} == true">
             <div class="text-white px-1" style="font-size: 20px; background-color: #6bbb96;">
-                Datenverkehr
+                Datenverkehr 
             </div>
         </div>
         <div th:unless="${Result1 == true}">
             <select class="form-select py-0" style="height: 22.5px;" aria-label="Default select example" th:name="answer1">
                 <option value="0">Auswählen</option>
-                <option value="1">Datenverkehr</option>
+                <option value="1">Datenverkehr </option>
                 <option value="2">Nutzer</option>
                 <option value="3">Computer</option>
             </select>
         </div>
     </div>
-    <div class="col-auto px-0" style="font-size: 22.5px;">anhand der Kombination aus IP-Adresse und Portnummer geroutet wird.</div>
+    <div class="col-auto px-0" style="font-size: 22.5px;">&nbsp; anhand der Kombination aus IP-Adresse und Portnummer geroutet wird.</div>
     <h1></h1>
 
 <!-- Hier wird nochmal geprüft, ob der Lückentext bestanden wurde, um andere Buttons anzuzeigen-->

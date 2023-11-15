@@ -6,8 +6,8 @@
 <h3>Inhalte:</h3>
 <!--Links zu Abschnitten der Seite, Referenzen zu Abschnittsüberschriften-->
 <div class="collection">
-    <a href="#historischer_angriff 1" class="collection-item">Historischer Angriff 1</a>
-    <a href="#historischer_angriff 2" class="collection-item">Historischer Angriff 2</a>
+    <a href="#NotPetya/Petya" class="collection-item">NotPetya/Petya</a>
+    <a href="#WannaCry" class="collection-item">WannaCry</a>
     <a href="#historischer_angriff 3" class="collection-item">Historischer Angriff 3</a>
     <a href="#historischer_angriff 4" class="collection-item">Historischer Angriff 4</a>
     <a href="#historischer_angriff 5" class="collection-item">Historischer Angriff 5</a>
@@ -17,12 +17,20 @@
 <h4>
     <!--Anchor Tag, id als referenz-->
     <div id="historischer_angriff 1" class="anchor"></div>
-    <a>Historischer Angriff 1</a>
+    <a>NotPetya/Petya</a>
 </h4>
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
+            <strong>Ablauf:</strong>
+            <h6></h6>
+            NotPetya trat in 2017 kurz nach den Attacken durch den Erpressungstrojaner WannaCry auf und machte schnell auf sich aufmerksam. Verbreitet über die ukrainische Steuersoftware MeDoc gehört es zu den ersten Trojanern, welche sich nicht durch Phishing oder Exploits, sondern innerhalb von Software verbreiten. Durch die hohe Verbreitung der Software wurden viele, auch multinationale Konzerne betroffen, einer davon Maersk. Der Angriff auf das System basierte dabei sowohl auf dem davor veröffentlichten EternalBlue-Exploit, welcher zwar von Microsoft gepatcht wurde, aber teils noch für Angriffe genutzt werden konnte, und einem Passwort-Dump, um sich auf den Rechnern einzuloggen.
+            <h6></h6>
+            <strong>Technische Hintergründe</strong>
+            <h6></h6>
+            Bei der Verbreitung geht NotPetya sehr präzise vor, indem ein Domainserver gesucht, infiziert und anschließend die spezifischen Computer angegriffen werden. Einmal auf dem System werden verschiedene Wege ausprobiert, darunter etwa der Eternalblue-Exploit, eine von der NSA entwickelten Hintertür, die zusammen mit mehreren anderen Zero-Day-Exploits zuvor durch die Hackergruppe Shadow Brokers veröffentlicht wurden. Zum Zeitpunkt des Angriffs hatte Microsoft bereits einen Patch veröffentlicht, allerdings waren Computer ohne das Update weiterhin anfällig, wobei auch Server etwa bei Maersk noch auf stark veralteten Systemen liefen. Weiterer Wege sind die Ausführung über Adminrechte und PsExec oder auch das Starten über die Windows Management Instrumentation Command-line (WMIC), wobei der Zugriff durch ein Passwort-Dump, welches etwa Mimikatz ähnelt, erlangt werden kann. Einmal ausgeführt wird das System neu gestartet und mit AES-128 oder RSA verschlüsselt, wobei nur eine relativ kleine Anzahl an Dateien verschlüsselt wird.  
+
+            Auffällig ist, dass eine Art Kill-Switch existiert, da NotPetya nicht ausgeführt wird, wenn eine bestimmte Datei auf dem System vorhanden ist. Dies bietet einen grundsätzlichen Schutz, ansonsten sind Updates, Backups und isoliertere Systeme den besten Schutz. 
             
         </p>
     </div>
@@ -35,13 +43,18 @@
 <h4>
     <!--Anchor Tag, id als referenz-->
     <div id="historischer_angriff 2" class="anchor"></div>
-    <a>Historischer Angriff 2</a>
+    <a>WannaCry</a>
 </h4>
 <div class="row">
     <div class="col s6">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            <strong>Ablauf:</strong>
+            <h6></h6>
+            WannaCry ähnelt in vielerlei Hinsicht NotPetya, wobei es auch als Vorgänger bezeichnet werden könnte. WannaCry verbreitet sich dabei auch als Wurm, wird allerdings klassischer per Mail übertragen und das System großflächiger verschlüsselte als sein Nachfolger. Auch die betroffenen Gruppen unterschieden sich folglich, da diesmal nicht mehr Konzerne im Mittelpunkt standen, sondern in diesem Fall etwa das NHS zu den größten betroffenen Netzwerken zählte.
+            <h6></h6>
+            <strong>Technische Hintergründe</strong>
+            <h6></h6>
+            WannaCry basiert wie NotPetya auch auf dem EternalBlue-Exploit, kann dadurch aber auch durch Updates gestoppt werden. Der Wurm selbst verbreitet sich über das Filesharing-Programm SMBv1 und installiert sich anschließend durch ein Backdoor-Tool namens “DoublePulsar“.  Einer der größten Unterschiede liegt bei dem Kill-Switch, wobei das Programm die Verbindung zu einer spezifischen Webadresse prüft. Nachdem dies herausgefunden werden konnte, wurde die Adresse aktiviert, wobei die Verbreitung nicht gestoppt wurde, das Programm sich aber nicht mehr auf den betroffenen Rechner ausgeführt wird.
         </p>
     </div>
     <div class="col s6">
@@ -58,8 +71,12 @@
 <div class="row">
     <div class="col s6">
         <p>
+            <strong>Ablauf:</strong>
+            <h6></h6>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            <h6></h6>
+            <strong>Technische Hintergründe</strong>
+            <h6></h6>
         </p>
     </div>
     <div class="col s6">
@@ -76,8 +93,12 @@
 <div class="row">
     <div class="col s6">
         <p>
+            <strong>Ablauf:</strong>
+            <h6></h6>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            <h6></h6>
+            <strong>Technische Hintergründe</strong>
+            <h6></h6>
         </p>
     </div>
     <div class="col s6">
@@ -94,8 +115,12 @@
 <div class="row">
     <div class="col s6">
         <p>
+            <strong>Ablauf:</strong>
+            <h6></h6>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta pariatur eligendi, iusto magnam inventore minus autem sunt nostrum illo cumque tempore ullam, consequuntur consequatur a vel officia dolores sit.
-            
+            <h6></h6>
+            <strong>Technische Hintergründe</strong>
+            <h6></h6>
         </p>
     </div>
     <div class="col s6">

@@ -16,6 +16,7 @@ public class LueckentextController {
     int selectedanswer1;
     int selectedanswer2;
 
+
     public LueckentextController(){
         // Richtige Antwort für das Feld wird hier angegeben, die einzelnen Werte stehen für den Wert Value bei den einzelnen Optionen in lueckentext.html, neue Felder können einfach hinzugefügt werden. 0 ist nur der Default-Wert wenn nichts ausgewählt wurde.
         setAnswerField1(1); 
