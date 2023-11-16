@@ -2,6 +2,36 @@
 <html>
 <head>
     <title>RSA Verfahren</title>
+</head>
+<body>
+    <h1>RSA Verfahren</h1>
+    
+    <p>Bitte geben Sie die RSA-Parameter ein:</p>
+    
+    <label for="p">p (Primzahl): </label>
+    <input type="number" id="p" required>
+    
+    <label for="q">q (Primzahl): </label>
+    <input type="number" id="q" required>
+    
+    <label for="e">e (öffentlicher Exponent): </label>
+    <input type="number" id="e" required>
+    
+    <button onclick="generateKeys()">Schlüssel generieren</button>
+    
+    <p id="nValue">n: </p>
+    <p id="dValue">d: </p>
+    
+    <p>Bitte wählen Sie eine Aktion:</p>
+    
+    <form id="encryptForm">
+        <label for="plaintext">Klartext: </label>
+        <input type="text" id="plaintext" required>
+        <button type="button" onclick="encryptText()">Verschlüsseln</button>
+    </form>
+    
+    <p id="encryptedText"></p>
+
     <script>
         // Define RSA parameters (n, e, d, p, q)
         let n, e, d, p, q;
@@ -31,69 +61,24 @@
             return 1;
         }
 
-        // Function to encrypt text
-        function encryptText() {
-            const plaintext = document.getElementById("plaintext").value;
-            const encryptedResult = rsaEncrypt(plaintext, e, n);
-            document.getElementById("encryptedText").textContent = "Verschlüsselter Text: " + encryptedResult;
-        }
-
-        // Function to decrypt text
-        function decryptText() {
-            const ciphertext = document.getElementById("ciphertext").value;
-            const decryptedResult = rsaDecrypt(ciphertext, d, n);
-            document.getElementById("decryptedText").textContent = "Entschlüsselter Text: " + decryptedResult;
-        }
-
         // Function to encrypt text using RSA
         function rsaEncrypt(plaintext, e, n) {
             // Implement RSA encryption logic with the given plaintext, public exponent (e), and modulus (n)
             // Return the encrypted result
-         return plaintext; // Replace with actual encryption logic
+            let encryptedResult = BigInt(plaintext).modPow(BigInt(e), BigInt(n));
+            return encryptedResult.toString();
         }
 
-        // Function to decrypt text using RSA
-        function rsaDecrypt(ciphertext, d, n) {
-            // Implement RSA decryption logic with the given ciphertext, private exponent (d), and modulus (n)
-            // Return the decrypted result
-            return ciphertext; // Replace with actual decryption logic
+        // Function to encrypt text
+        function encryptText() {
+            const plaintext = document.getElementById("plaintext").value;
+            const encryptedResult = rsaEncrypt(plaintext, e, n);
+
+            // Anstatt nur den Text anzuzeigen, setze ihn direkt in das HTML-Element ein
+            document.getElementById("encryptedText").innerHTML = "Verschlüsselter Text: <strong>" + encryptedResult + "</strong>";
+
+            // Du kannst auch den verschlüsselten Text für andere Zwecke verwenden (z.B., ihn an den Server senden)
         }
     </script>
-</head>
-<body>
-    <h1>RSA Verfahren</h1>
-    
-    <p>Bitte geben Sie die RSA-Parameter ein:</p>
-    
-    <label for="p">p (Primzahl): </label>
-    <input type="number" id="p" required>
-    
-    <label for="q">q (Primzahl): </label>
-    <input type="number" id="q" required>
-    
-    <label for="e">e (öffentlicher Exponent): </label>
-    <input type="number" id="e" required>
-    
-    <input type="button" value="Schlüssel generieren" onclick="generateKeys()">
-    
-    <p id="nValue">n: </p>
-    <p id="dValue">d: </p>
-    
-    <p>Bitte wählen Sie eine Aktion:</p>
-    
-    <form>
-        <label for="plaintext">Klartext: </label>
-        <input type="text" id="plaintext" required>
-        <input type="button" value="Verschlüsseln" onclick="encryptText()">
-    </form>
-    
-    <form>
-        <label for="ciphertext">Geheimtext: </label>
-        <input type="text" id="ciphertext" required>
-        <input type="button" value="Entschlüsseln" onclick="decryptText()">
-    </form>
-    
-    <p><span id="encryptedText"></span></p>
-    <p><span id="decryptedText"></span></p>
-</body>                                                                                                                                                                                                           
+</body>
 </html>
