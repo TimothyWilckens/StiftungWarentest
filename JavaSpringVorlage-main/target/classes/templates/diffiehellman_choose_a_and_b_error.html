@@ -1,4 +1,5 @@
-bbbb<h1>Diffie-Hellman-Merkle Schlüsseltausch</h1>
+<!-- Diese Seite erscheint, wenn ein Fehler etwa durch falsche zahlen erkannt wurde -->
+<h1>Diffie-Hellman-Merkle Schlüsseltausch</h1>
 <hr>
 
 Gewählter Wert für p: <span th:text="${p}"></span>
@@ -21,7 +22,7 @@ Gewählter Wert für g: <span th:text="${g}"></span>
     <div class="col-auto">
         <button type="submit" class="btn btn-success mb-3">Schlüssel erstellen</button>
     </div>
-
+</form>
 <a class="btn btn-success mb-3" th:href="@{/diffiehellman_choose_p_and_g}">Zurück</a>
 
 <a class="btn btn-success mb-3" th:href="@{/?activePage=sicherheit}">Abbrechen</a>

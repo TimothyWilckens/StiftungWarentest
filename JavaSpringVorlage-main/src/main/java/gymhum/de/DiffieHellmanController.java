@@ -80,7 +80,7 @@ public class DiffieHellmanController {
         model.addAttribute("activePage", "diffiehellman_choose_a_and_b_submit");
         model.addAttribute("p", getP());
         model.addAttribute("g", getG());
-        // Wenn bei compareTo der erste Wert kleiner ist, wird -1 ausgegeben (Ziel)
+        // Wenn bei compareTo der erste Wert in valueOf kleiner ist, wird -1 ausgegeben (Ziel)
         if(BigInteger.valueOf(a).compareTo(getP())==-1 && BigInteger.valueOf(b).compareTo(getP())==-1){
             setA(BigInteger.valueOf(a));
             setB(BigInteger.valueOf(b));
@@ -100,6 +100,7 @@ public class DiffieHellmanController {
     }
 
     public void generatekey(){
+        // Die einzelnen Schritte zur Schlüsselerstellung werden durchgegangen
         setBigA(getG().modPow(a, p));
         setBigB(getG().modPow(b, p));
         setK1(getBigB().modPow(a, p));

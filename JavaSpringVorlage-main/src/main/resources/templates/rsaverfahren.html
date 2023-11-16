@@ -1,99 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>RSA Verfahren</title>
-</head>
-<body>
-    <h1>RSA Verfahren</h1>
-    
-    <p>Bitte geben Sie die RSA-Parameter ein:</p>
-    
-    <label for="p">p (Primzahl): </label>
-    <input type="number" id="p" required>
-    
-    <label for="q">q (Primzahl): </label>
-    <input type="number" id="q" required>
-    
-    <label for="e">e (öffentlicher Exponent): </label>
-    <input type="number" id="e" required>
-    
-    <button onclick="generateKeys()">Schlüssel generieren</button>
-    
-    <p id="nValue">n: </p>
-    <p id="dValue">d: </p>
-    
-    <p>Bitte wählen Sie eine Aktion:</p>
-    
-    <form onsubmit="return false;">
-        <label for="plaintext">Klartext: </label>
-        <input type="text" id="plaintext" required>
-        <button type="button" id="encryptButton">Verschlüsseln</button>
-    </form>
-    
-    <p id="encryptedText"></p>
+<h1>RSA Verfahren</h1>
 
-    <script>
-        // Define RSA parameters (n, e, d, p, q)
-        let n, e, d, p, q;
+<p>Bitte geben Sie die RSA-Parameter ein:</p>
 
-        // Funktion zum Hinzufügen des Event-Listeners für den Verschlüsselungs-Button
-        function addEncryptButtonListener() {
-            document.getElementById('encryptButton').addEventListener('click', encryptText);
+<label for="p">p (Primzahl): </label>
+<input type="number" id="p" required>
+
+<label for="q">q (Primzahl): </label>
+<input type="number" id="q" required>
+
+<label for="e">e (öffentlicher Exponent): </label>
+<input type="number" id="e" required>
+
+<a class="btn btn-success mb-3" onclick="generateKeys()">Schlüssel generieren</a>
+
+<p id="nValue">n: </p>
+<p id="dValue">d: </p>
+
+<script>
+    // Funktion, um die RSA-Schlüssel zu generieren
+    let n, e, d, p, q;
+    let prime = new Boolean(true);
+    function generateKeys() {
+        prime = true
+        p = Number(document.getElementById("p").value);
+        q = Number(document.getElementById("q").value);
+        e = Number(document.getElementById("e").value);
+
+        // Diese Funktion stellt sicher, dass es sich bei p und q um Primzahlen handelt (bereits bei Diffie-Hellman verwendet)
+        if(p > 1 && q > 1){
+            for(let i = 2; i <= p/2; i++){
+                if((p%i) == 0){
+                    prime = false;
+                }
+            }
+            for(let i = 2; i <= q/2; i++){
+                if((q%i) == 0){
+                    prime = false;
+                }
+            }
+        } else {
+            prime = false;
         }
-
-        // Funktion, um die RSA-Schlüssel zu generieren
-        function generateKeys() {
-            p = Number(document.getElementById("p").value);
-            q = Number(document.getElementById("q").value);
-            e = Number(document.getElementById("e").value);
-
+        if(prime == true){
+            // Erstellung von n
             n = p * q;
+
+            // Eulersche Phi-Funktion
             const phi = (p - 1) * (q - 1);
             
+            // Funktion ersetzt Durchführung des erweiterten Euklidischen Algorithmus
             d = findMultiplicativeInverse(e, phi);
             
             document.getElementById("nValue").textContent = "n: " + n;
             document.getElementById("dValue").textContent = "d: " + d;
-
-            // Nach dem Generieren der Schlüssel den Event-Listener für den Verschlüsselungs-Button hinzufügen
-            addEncryptButtonListener();
+        } else {
+            // Wenn p und q keine Primzahlen waren, werden Fehler ausgegeben
+            document.getElementById("nValue").textContent = "Fehler, eine oder mehrere Zahlen entsprechen nicht den Bedingungen";
+            document.getElementById("dValue").textContent = "Fehler, eine oder mehrere Zahlen entsprechen nicht den Bedingungen";
         }
+    }
 
-        // Event-Listener für das Laden der Seite
-        window.onload = function () {
-            // Event-Listener für den "Schlüssel generieren"-Button hinzufügen
-            document.querySelector('button[onclick="generateKeys()"]').addEventListener('click', generateKeys);
-        };
-
-        // Funktion zum Berechnen des multiplikativen Inversen von 'a' modulo 'm'
-        function findMultiplicativeInverse(a, m) {
-            for (let x = 1; x < m; x++) {
-                if ((a * x) % m === 1) {
-                    return x;
-                }
+    // Funktion zum Berechnen des multiplikativen Inversen von 'a' modulo 'm'
+    function findMultiplicativeInverse(a, m) {
+        for (let x = 1; x < m; x++) {
+            if ((a * x) % m === 1) {
+                return x;
             }
-            return 1;
         }
-
-        // Funktion zum Verschlüsseln von Text mit RSA
-        function rsaEncrypt(plaintext, e, n) {
-            // Implementiere die RSA-Verschlüsselungslogik mit dem gegebenen Klartext, dem öffentlichen Exponenten (e) und dem Modulus (n)
-            // Gib das verschlüsselte Ergebnis zurück
-            let encryptedResult = BigInt(plaintext).modPow(BigInt(e), BigInt(n)).toString();
-            return encryptedResult;
-        }
-
-        // Funktion zum Verschlüsseln von Text
-        function encryptText() {
-            const plaintext = document.getElementById("plaintext").value;
-            const encryptedResult = rsaEncrypt(plaintext, e, n);
-
-            // Setze den verschlüsselten Text direkt in das HTML-Element ein
-            document.getElementById("encryptedText").innerHTML = "Verschlüsselter Text: <strong>" + encryptedResult + "</strong>";
-
-            // Verhindere das Standard-Submit-Verhalten des Formulars
-            return false;
-        }
-    </script>
-</body>
-</html>
+        return 1;
+    }
+</script>

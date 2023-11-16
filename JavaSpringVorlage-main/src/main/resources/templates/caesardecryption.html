@@ -33,7 +33,7 @@ by onyx1812 (https://codepen.io/onyx1812/pen/GRJxmva)
   </div>
 </div>
 
-<!-- Script Entschlüsselung -->
+<!-- Script Entschlüsselung und Wheel Drehung-->
 <script>
     let geheimtextInput = document.querySelector("#geheimtext");
     let keyInput = document.querySelector("#key");
@@ -45,18 +45,18 @@ by onyx1812 (https://codepen.io/onyx1812/pen/GRJxmva)
     keyInput.addEventListener("input", numberEntered, false);
 
     function characterEntered(e) {
-      // Ensure we only deal with lowercase letters
+      // Sicherstellung, dass nur verarbeitbare Buchstaben in LowerCase übergeben werden
       geheimtextMessage = e.target.value;
       geheimtextMessage = geheimtextMessage.toLowerCase();
       geheimtextMessage = geheimtextMessage.replace(/[^a-z]/, '');
 
       e.target.value = geheimtextMessage;
 
-      // Let's get the party started!
       startEncryption();
     }
 
     function numberEntered(e) {
+      // Sobald die Eingabe für den Schlüssel sich verändert, wird neu verschlüsselt
       startEncryption();
     }
 
@@ -64,6 +64,7 @@ by onyx1812 (https://codepen.io/onyx1812/pen/GRJxmva)
       let klartextMessage = "";
       let key = keyInput.value ? Number(keyInput.value) : 0;
 
+      // Jeder Buchstabe des Geheimtextes wird durchgegangen
       for (letter of geheimtextMessage) {
         klartextMessage += keyLetter(letter, key);
       }
@@ -79,14 +80,14 @@ by onyx1812 (https://codepen.io/onyx1812/pen/GRJxmva)
     function keyLetter(letter, key) {
       let newLetter = "";
 
+      // Für die Verschlüsselung wird mit UTF-16 Nummern der Buchstaben gearbeitet und diese verrechnet
       let letterCode = letter.charCodeAt(0);
       let newLetterCode = letterCode - (key % 26);
 
+      // Wenn der neue Buchstabenwert entweder 97, also a, unterschreitet oder 122, also z, überschreitet, wird der Wert an den Anfang gesetzt, also -26 gerechnet
       if (newLetterCode < 97) {
-        // If new letter goes below "a" aka character code 97
         newLetterCode += 26;
       } else if (newLetterCode > 122) {
-        // If new letter goes past "z" aka character code 122
         newLetterCode -= 26;
       }
 

@@ -24,11 +24,11 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Wenn eine Partei eine Nachricht an die andere senden möchte, verwendet sie den öffentlichen Schlüssel des Empfängers, um die Nachricht zu verschlüsseln. Dies bedeutet, dass nur der Empfänger die Nachricht entschlüsseln kann, da nur er den privaten Schlüssel hat, der zur Entschlüsselung benötigt wird.            
+            Hybride Verfahren sind in der Kryptographie verwendete Techniken, die sowohl symmetrische als auch asymmetrische Verschlüsselungsverfahren miteinander kombinieren, um die Vorteile beider Ansätze zu nutzen. Die Idee hinter hybriden Verfahren besteht darin, die Effizienz der symmetrischen Verschlüsselung für die eigentliche Datenübertragung zu nutzen und gleichzeitig die Sicherheit der asymmetrischen Verschlüsselung für den sicheren Austausch der symmetrischen Schlüssel zu gewährleisten. Sie werden sowohl bei SSL und TLS als auch bei PGP und GPG verwendet, um zum Beispiel Emails zu versenden oder um auf Websites zuzugreifen. 
         </p>
     </div>
     <div class="col s6">
-        <img class="img-fluid" th:src="@{img/hybrid.jpg}" alt="clientserver not found"/>
+        <img class="img-fluid" th:src="@{img/hybrid.jpg}" alt="hybrid not found"/>
     </div>
 </div>
 
@@ -63,7 +63,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img th:src="@{img/Protokolle.jpg}" alt="Protokolle not found"/>
+        <img th:src="@{img/ssl.jpg}" alt="ssl not found"/>
     </div>
 </div>
 
@@ -81,7 +81,7 @@
         </p>
     </div>
     <div class="col s6">
-        <img th:src="@{img/Protokolle.jpg}" alt="Protokolle not found"/>
+        <img th:src="@{img/tls.jpg}" alt="Protokolle not found"/>
     </div>
 </div>
 
@@ -95,43 +95,39 @@
 <div class="row">
     <div class="col s6">
         <p>
-            Verwaltung von Netzwerkschlüsseln 
+            <strong>Verwaltung von Netzwerkschlüsseln</strong>
 
- 
+            <p>Erzeugung von Schlüsseln: </p>
+            <p>Der erste Schritt in der Schlüsselverwaltung besteht darin, kryptografische Schlüssel zu generieren. Dies können symmetrische Schlüssel sein, die für Verschlüsselung und Entschlüsselung verwendet werden, oder asymmetrische Schlüsselpaare, die für Public-Key-Kryptografie eingesetzt werden.</p>
 
-Erzeugung von Schlüsseln: 
+            <p>Speicherung von Schlüsseln: </p>
 
-Der erste Schritt in der Schlüsselverwaltung besteht darin, kryptografische Schlüssel zu generieren. Dies können symmetrische Schlüssel sein, die für Verschlüsselung und Entschlüsselung verwendet werden, oder asymmetrische Schlüsselpaare, die für Public-Key-Kryptografie eingesetzt werden. 
+            <p>Sicherheitsrichtlinien erfordern oft, dass Schlüssel sicher gespeichert werden, um unbefugten Zugriff zu verhindern. Dies kann Hardware-Sicherheitsmodule (HSMs) oder sichere Software-Speichermechanismen umfassen. </p>
 
-Speicherung von Schlüsseln: 
+            <p>Verteilung von Schlüsseln: </p>
 
-Sicherheitsrichtlinien erfordern oft, dass Schlüssel sicher gespeichert werden, um unbefugten Zugriff zu verhindern. Dies kann Hardware-Sicherheitsmodule (HSMs) oder sichere Software-Speichermechanismen umfassen. 
+            <p>Um verschlüsselte Kommunikation in einem Netzwerk zu ermöglichen, müssen die Schlüssel sicher an die Kommunikationspartner verteilt werden. Dies kann durch sichere Protokolle wie das Diffie-Hellman-Schlüsselaustauschverfahren erfolgen. </p>
 
-Verteilung von Schlüsseln: 
+            <p>Regenerierung und Aktualisierung von Schlüsseln: </p>
 
-Um verschlüsselte Kommunikation in einem Netzwerk zu ermöglichen, müssen die Schlüssel sicher an die Kommunikationspartner verteilt werden. Dies kann durch sichere Protokolle wie das Diffie-Hellman-Schlüsselaustauschverfahren erfolgen. 
+            <p>Kryptografische Schlüssel haben eine begrenzte Lebensdauer aus Sicherheitsgründen. Sie sollten regelmäßig neu generiert oder aktualisiert werden, um sicherzustellen, dass selbst im Falle eines Kompromisses die Daten weiterhin geschützt sind.</p>
 
-Regenerierung und Aktualisierung von Schlüsseln: 
+            <p>Überwachung und Auditing: </p>
 
-Kryptografische Schlüssel haben eine begrenzte Lebensdauer aus Sicherheitsgründen. Sie sollten regelmäßig neu generiert oder aktualisiert werden, um sicherzustellen, dass selbst im Falle eines Kompromisses die Daten weiterhin geschützt sind. 
+            <p>Netzwerkschlüsselverwaltungssysteme überwachen oft die Nutzung von Schlüsseln und können verdächtige Aktivitäten erkennen. Darüber hinaus ermöglichen sie die Protokollierung von Schlüsselaktivitäten für Prüfungszwecke. </p>
 
-Überwachung und Auditing: 
+            <p>Sicherheitsrichtlinien und Zugriffskontrolle: </p>
 
-Netzwerkschlüsselverwaltungssysteme überwachen oft die Nutzung von Schlüsseln und können verdächtige Aktivitäten erkennen. Darüber hinaus ermöglichen sie die Protokollierung von Schlüsselaktivitäten für Prüfungszwecke. 
+            <p>Die Verwaltung von Netzwerkschlüsseln erfordert klare Sicherheitsrichtlinien und Zugriffskontrollen, um sicherzustellen, dass nur autorisierte Personen auf Schlüssel zugreifen und diese verwalten können. </p>
 
-Sicherheitsrichtlinien und Zugriffskontrolle: 
+            <p>Notfallwiederherstellung: </p>
 
-Die Verwaltung von Netzwerkschlüsseln erfordert klare Sicherheitsrichtlinien und Zugriffskontrollen, um sicherzustellen, dass nur autorisierte Personen auf Schlüssel zugreifen und diese verwalten können. 
-
-Notfallwiederherstellung: 
-
-Im Falle eines Schlüsselverlusts oder -kompromisses müssen Notfallwiederherstellungsverfahren vorhanden sein, um sicherzustellen, dass die Netzwerkkommunikation fortgesetzt werden kann. 
-
+            <p>Im Falle eines Schlüsselverlusts oder -kompromisses müssen Notfallwiederherstellungsverfahren vorhanden sein, um sicherzustellen, dass die Netzwerkkommunikation fortgesetzt werden kann. </p>
  
         </p>
     </div>
     <div class="col s6">
-        <img class="img-fluid" th:src="@{img/Schluessel.jpg}" alt="clientserver not found"/>
+        <img class="img-fluid" th:src="@{img/Schluessel.jpg}" alt="Schluessel not found"/>
     </div>
 </div>
 
@@ -145,53 +141,41 @@ Im Falle eines Schlüsselverlusts oder -kompromisses müssen Notfallwiederherste
 <div class="row">
     <div class="col s6">
         <p>
-            End-to-End-Verschlüsselung 
+            <strong>End-to-End-Verschlüsselung</strong>
 
-Schlüsselerzeugung: 
+            <p>Schlüsselerzeugung: </p>
 
-Jede Kommunikationspartei erzeugt ein Schlüsselpaar, das aus einem öffentlichen und einem privaten Schlüssel besteht. Der öffentliche Schlüssel wird zur Verschlüsselung verwendet, während der private Schlüssel zur Entschlüsselung benötigt wird. 
+            <p>Jede Kommunikationspartei erzeugt ein Schlüsselpaar, das aus einem öffentlichen und einem privaten Schlüssel besteht. Der öffentliche Schlüssel wird zur Verschlüsselung verwendet, während der private Schlüssel zur Entschlüsselung benötigt wird. </p>
 
-Verschlüsselung: 
+            <p>Verschlüsselung: </p>
 
-Wenn eine Partei eine Nachricht an die andere senden möchte, verwendet sie den öffentlichen Schlüssel des Empfängers, um die Nachricht zu verschlüsseln. Dies bedeutet, dass nur der Empfänger die Nachricht entschlüsseln kann, da nur er den privaten Schlüssel hat, der zur Entschlüsselung benötigt wird. 
+            <p>Wenn eine Partei eine Nachricht an die andere senden möchte, verwendet sie den öffentlichen Schlüssel des Empfängers, um die Nachricht zu verschlüsseln. Dies bedeutet, dass nur der Empfänger die Nachricht entschlüsseln kann, da nur er den privaten Schlüssel hat, der zur Entschlüsselung benötigt wird. </p>
 
-Die Nachricht wird mit Hilfe von Verschlüsselungsalgorithmen und dem öffentlichen Schlüssel des Empfängers in eine unleserliche Form (Ciphertext) umgewandelt. 
+            <p>Die Nachricht wird mit Hilfe von Verschlüsselungsalgorithmen und dem öffentlichen Schlüssel des Empfängers in eine unleserliche Form (Ciphertext) umgewandelt. </p>
 
-Übertragung: 
+            <p>Übertragung: </p>
 
-Die verschlüsselte Nachricht wird übertragen, sei es über das Internet, Mobilfunknetze oder andere Kommunikationsmittel. Während der Übertragung bleibt die Nachricht verschlüsselt und für Dritte unlesbar. 
+            <p>Die verschlüsselte Nachricht wird übertragen, sei es über das Internet, Mobilfunknetze oder andere Kommunikationsmittel. Während der Übertragung bleibt die Nachricht verschlüsselt und für Dritte unlesbar. </p>
 
-Entschlüsselung: 
+            <p>Entschlüsselung: </p>
 
-Der Empfänger verwendet seinen privaten Schlüssel, um den Ciphertext in die ursprüngliche Nachricht (Klartext) zurückzuverwandeln. Dies geschieht mithilfe von Entschlüsselungsalgorithmen. 
+            <p>Der Empfänger verwendet seinen privaten Schlüssel, um den Ciphertext in die ursprüngliche Nachricht (Klartext) zurückzuverwandeln. Dies geschieht mithilfe von Entschlüsselungsalgorithmen. </p>
 
-Nur der Empfänger mit dem entsprechenden privaten Schlüssel kann die Nachricht entschlüsseln und den Inhalt lesen. 
+            <p>Nur der Empfänger mit dem entsprechenden privaten Schlüssel kann die Nachricht entschlüsseln und den Inhalt lesen. </p>
 
-Sicherheit: 
+            <p>Sicherheit: </p>
 
-Die Sicherheit von E2E-Verschlüsselung beruht auf der Geheimhaltung des privaten Schlüssels. Solange der private Schlüssel sicher aufbewahrt wird und nicht kompromittiert ist, bleibt die Kommunikation vertraulich. 
+            <p>Die Sicherheit von E2E-Verschlüsselung beruht auf der Geheimhaltung des privaten Schlüssels. Solange der private Schlüssel sicher aufbewahrt wird und nicht kompromittiert ist, bleibt die Kommunikation vertraulich. </p>
 
- 
+            <p>Schlüsselerzeugung: Alice und Bob erzeugen jeweils ein Schlüsselpaar, bestehend aus einem öffentlichen und einem privaten Schlüssel, für die End-to-End-Verschlüsselung. </p>
 
- 
+            <p>Öffentliche Schlüssel austauschen: Alice und Bob tauschen ihre öffentlichen Schlüssel aus, damit sie Nachrichten miteinander verschlüsseln können. Dieser Austausch kann auf verschiedene Arten erfolgen, einschließlich QR-Codes, persönlicher Verifizierung oder über eine Vertrauenskette. </p>
 
-Schlüsselerzeugung: Alice und Bob erzeugen jeweils ein Schlüsselpaar, bestehend aus einem öffentlichen und einem privaten Schlüssel, für die End-to-End-Verschlüsselung. 
+            <p>Verschlüsselung der Nachricht: Wenn Alice eine Nachricht an Bob sendet, verwendet sie Bobs öffentlichen Schlüssel, um die Nachricht zu verschlüsseln. Dadurch wird die Nachricht in einen für Dritte unlesbaren Ciphertext umgewandelt. </p>
 
-  
+            <p>Übertragung der verschlüsselten Nachricht: Die verschlüsselte Nachricht wird über das Messaging-Netzwerk an Bob gesendet. Während der Übertragung bleibt die Nachricht verschlüsselt und kann nicht von Dritten gelesen werden. </p>
 
-Öffentliche Schlüssel austauschen: Alice und Bob tauschen ihre öffentlichen Schlüssel aus, damit sie Nachrichten miteinander verschlüsseln können. Dieser Austausch kann auf verschiedene Arten erfolgen, einschließlich QR-Codes, persönlicher Verifizierung oder über eine Vertrauenskette. 
-
-  
-
-Verschlüsselung der Nachricht: Wenn Alice eine Nachricht an Bob sendet, verwendet sie Bobs öffentlichen Schlüssel, um die Nachricht zu verschlüsseln. Dadurch wird die Nachricht in einen für Dritte unlesbaren Ciphertext umgewandelt. 
-
-  
-
-Übertragung der verschlüsselten Nachricht: Die verschlüsselte Nachricht wird über das Messaging-Netzwerk an Bob gesendet. Während der Übertragung bleibt die Nachricht verschlüsselt und kann nicht von Dritten gelesen werden. 
-
-  
-
-Entschlüsselung der Nachricht: Wenn Bob die Nachricht empfängt, verwendet er seinen privaten Schlüssel, um die Nachricht zu entschlüsseln und den ursprünglichen Inhalt zu sehen. 
+            <p>Entschlüsselung der Nachricht: Wenn Bob die Nachricht empfängt, verwendet er seinen privaten Schlüssel, um die Nachricht zu entschlüsseln und den ursprünglichen Inhalt zu sehen. </p>
         </p>
     </div>
     <div class="col s6">
