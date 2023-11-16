@@ -24,10 +24,10 @@
     
     <p>Bitte wählen Sie eine Aktion:</p>
     
-    <form id="encryptForm">
+    <form onsubmit="return false;">
         <label for="plaintext">Klartext: </label>
         <input type="text" id="plaintext" required>
-        <button type="button" onclick="encryptText()">Verschlüsseln</button>
+        <button type="button" id="encryptButton">Verschlüsseln</button>
     </form>
     
     <p id="encryptedText"></p>
@@ -36,7 +36,12 @@
         // Define RSA parameters (n, e, d, p, q)
         let n, e, d, p, q;
 
-        // Function to generate an RSA key pair
+        // Funktion zum Hinzufügen des Event-Listeners für den Verschlüsselungs-Button
+        function addEncryptButtonListener() {
+            document.getElementById('encryptButton').addEventListener('click', encryptText);
+        }
+
+        // Funktion, um die RSA-Schlüssel zu generieren
         function generateKeys() {
             p = Number(document.getElementById("p").value);
             q = Number(document.getElementById("q").value);
@@ -49,9 +54,18 @@
             
             document.getElementById("nValue").textContent = "n: " + n;
             document.getElementById("dValue").textContent = "d: " + d;
+
+            // Nach dem Generieren der Schlüssel den Event-Listener für den Verschlüsselungs-Button hinzufügen
+            addEncryptButtonListener();
         }
 
-        // Function to calculate the multiplicative inverse of 'a' modulo 'm'
+        // Event-Listener für das Laden der Seite
+        window.onload = function () {
+            // Event-Listener für den "Schlüssel generieren"-Button hinzufügen
+            document.querySelector('button[onclick="generateKeys()"]').addEventListener('click', generateKeys);
+        };
+
+        // Funktion zum Berechnen des multiplikativen Inversen von 'a' modulo 'm'
         function findMultiplicativeInverse(a, m) {
             for (let x = 1; x < m; x++) {
                 if ((a * x) % m === 1) {
@@ -61,23 +75,24 @@
             return 1;
         }
 
-        // Function to encrypt text using RSA
+        // Funktion zum Verschlüsseln von Text mit RSA
         function rsaEncrypt(plaintext, e, n) {
-            // Implement RSA encryption logic with the given plaintext, public exponent (e), and modulus (n)
-            // Return the encrypted result
-            let encryptedResult = BigInt(plaintext).modPow(BigInt(e), BigInt(n));
-            return encryptedResult.toString();
+            // Implementiere die RSA-Verschlüsselungslogik mit dem gegebenen Klartext, dem öffentlichen Exponenten (e) und dem Modulus (n)
+            // Gib das verschlüsselte Ergebnis zurück
+            let encryptedResult = BigInt(plaintext).modPow(BigInt(e), BigInt(n)).toString();
+            return encryptedResult;
         }
 
-        // Function to encrypt text
+        // Funktion zum Verschlüsseln von Text
         function encryptText() {
             const plaintext = document.getElementById("plaintext").value;
             const encryptedResult = rsaEncrypt(plaintext, e, n);
 
-            // Anstatt nur den Text anzuzeigen, setze ihn direkt in das HTML-Element ein
+            // Setze den verschlüsselten Text direkt in das HTML-Element ein
             document.getElementById("encryptedText").innerHTML = "Verschlüsselter Text: <strong>" + encryptedResult + "</strong>";
 
-            // Du kannst auch den verschlüsselten Text für andere Zwecke verwenden (z.B., ihn an den Server senden)
+            // Verhindere das Standard-Submit-Verhalten des Formulars
+            return false;
         }
     </script>
 </body>
